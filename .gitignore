@@ -1,0 +1,19 @@
+# ROS build files
+ros_ws/build/
+ros_ws/devel/
+ros_ws/install/
+
+# Arduino garbage
+*.hex
+*.elf
+*.bin
+*.cpp.d
+*.d
+*.o
+*.eep
+
+# IDEs / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
