@@ -15,7 +15,8 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CmdDriveVel.msg"
-  "msg/MotorState.msg"
+  "msg/MotorInfo.msg"
+  "msg/MotorOdomInfo.msg"
 )
 
 if(BUILD_TESTING)

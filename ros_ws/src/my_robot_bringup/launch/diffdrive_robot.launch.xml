@@ -1,0 +1,7 @@
+<launch>
+
+    <node pkg="my_cpp_pkg" exec="arduino_bridge_node" />
+    <node pkg="my_cpp_pkg" exec="pid_diffdrive_control" />
+
+
+</launch>

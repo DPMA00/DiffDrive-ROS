@@ -3,8 +3,8 @@
 
 const int TICKS_PER_REV = 360;
 const int ZEROVEL = 128;
-const int ENCODER_INTERVAL = 5;
-const int CONTROL_INTERVAL = 10;
+const int ENCODER_INTERVAL = 10;
+const int CONTROL_INTERVAL = 20;
 
 
 const float base_L = 0.245;
@@ -46,11 +46,17 @@ struct Phi {
 void setup() {
   Wire.begin();
   Serial.begin(115200);
+  Serial.println("===== Arduino booted =====");
   delay(500);
   // Set mode 0 (Motor1 = reg 0, Motor2 = reg 1)
   Wire.beginTransmission(MD25_ADDRESS);
   Wire.write(0x0F); // Mode register
   Wire.write(0x00); // Mode 0
+  Wire.endTransmission();
+
+  Wire.beginTransmission(MD25_ADDRESS);
+  Wire.write(0x10); // Command register
+  Wire.write(0x20); // Reset encoders
   Wire.endTransmission();
 
   // Initialize motors to standstill
@@ -140,15 +146,29 @@ void loop() {
   if (Serial.available())
   {
     String line = Serial.readStringUntil('\n');
+    
     line.trim();  // clean up extra spaces or newlines
+
+    if (line == "r") {
+    // Reset encoder counts
+    prev_encoder1 = 0;
+    prev_encoder2 = 0;
+
+    // Optional: reset filtered variables too
+    smoothed_rpm1 = 0;
+    smoothed_rpm2 = 0;
+    error_integral1 = 0;
+    error_integral2 = 0;
+    return;
+    }
     
     int spaceIndex = line.indexOf(' ');
     if (spaceIndex != -1) {
       String vxStr = line.substring(0, spaceIndex);
       String omegaStr = line.substring(spaceIndex + 1);
     
-      target_vx = vxStr.toFloat();
-      target_omega = omegaStr.toFloat();
+      target_vx = -vxStr.toFloat();
+      target_omega = -omegaStr.toFloat();
     
       Serial.print("Parsed target_vx: ");
       Serial.print(target_vx);
@@ -212,13 +232,19 @@ void loop() {
     Wire.write(ZEROVEL + motor2_out);
     Wire.endTransmission();
 
-    Serial.print(prev_encoder1);
-    Serial.print(" ");
     Serial.print(prev_encoder2);
     Serial.print(" ");
-    Serial.print(1.23); // Placeholder for left current
+    Serial.print(prev_encoder1);
     Serial.print(" ");
-    Serial.println(4.56); // Placeholder for right current
+    Serial.print(smoothed_rpm2);
+    Serial.print(" ");
+    Serial.print(smoothed_rpm1);
+    Serial.print(" ");
+    Serial.print(1.0); // Placeholder for left current
+    Serial.print(" ");
+    Serial.print(1.0); // Placeholder for right current
+    Serial.print(" ");
+    Serial.println(1.0); // Placeholder for battery
 
     prev_control_time = now;
   }
