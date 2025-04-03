@@ -2,6 +2,7 @@
 #include <my_robot_interfaces/msg/motor_odom_info.hpp>
 #include <my_robot_interfaces/msg/cmd_drive_vel.hpp>
 #include <nav_msgs/msg/odometry.hpp>
+#include <geometry_msgs/msg/vector3.hpp>
 #include <algorithm>
 #include <cmath>
 
@@ -9,7 +10,7 @@ using namespace std::chrono_literals;
 
 constexpr double PI = 3.14159265358979323846;
 constexpr double MAX_VELOCITY = 0.6;  // 1.05 m/s
-constexpr double MAX_ANGULAR_VELOCITY = 5;  // 13.3 rad/s
+constexpr double MAX_ANGULAR_VELOCITY = 13;  // 13.3 rad/s
 
 
 class DiffDriveControllerNode : public rclcpp::Node
@@ -17,16 +18,17 @@ class DiffDriveControllerNode : public rclcpp::Node
 public:
     DiffDriveControllerNode() : Node("pid_diffdrivedrive_control")
     {
-        this->declare_parameter("pose", std::vector<double>{2, 4});
-
         odom_info_subscription = this->create_subscription<my_robot_interfaces::msg::MotorOdomInfo>(
-            "/arduino/motor_odom_info", 10, std::bind(&DiffDriveControllerNode::MotorOdomInfoCallback, this, std::placeholders::_1));
+            "arduino/motor_odom_info", 10, std::bind(&DiffDriveControllerNode::MotorOdomInfoCallback, this, std::placeholders::_1));
 
         velocity_publisher = this->create_publisher<my_robot_interfaces::msg::CmdDriveVel>("arduino/cmd_vel", 10);
 
         odometry_publisher = this->create_publisher<nav_msgs::msg::Odometry>("diffdrive/odometry", 10);
 
         timer_ = this->create_wall_timer(30ms, std::bind(&DiffDriveControllerNode::controller, this));
+
+        target_subscriber = this->create_subscription<geometry_msgs::msg::Vector3>(
+            "diffdrive/target_pos",10, std::bind(&DiffDriveControllerNode::TargetPosCallback, this, std::placeholders::_1));
 
     }
 
@@ -57,6 +59,9 @@ private:
     float L_rpm {0};
     float R_rpm {0};
 
+    double x_target {0};
+    double y_target {0};
+
     double rad2deg(double angle)
     {
         return angle*180/PI;
@@ -76,7 +81,6 @@ private:
 
         prev_L_enc_pos = L_enc_pos;
         prev_R_enc_pos = R_enc_pos;
-        RCLCPP_INFO(this->get_logger(), "L_enc: %ld | R_enc: %ld", L_enc_pos, R_enc_pos);
 
         double d_left = wheel_radius*delta_L_encoder * (2*PI/360);
         double d_right = wheel_radius*delta_R_encoder * (2*PI/360);
@@ -85,7 +89,6 @@ private:
         double d_avg = (d_left + d_right)/2;
         double delta_theta = (d_right-d_left)/wheel_base;
 
-        RCLCPP_INFO(this->get_logger(), "delta_theta: %f", delta_theta);
         
         ori_z += delta_theta;
 
@@ -109,13 +112,6 @@ private:
 
     void controller()
     {
-        std::vector<double> setpoint;
-        this->get_parameter("pose", setpoint);
-        double x_target = setpoint[0];
-        double y_target = setpoint[1];
-
-
-
         pos_error = sqrt(pow((x_target-pos_x),2) + pow((y_target-pos_y),2));
         double heading = atan2((y_target-pos_y), (x_target-pos_x));
         heading_error = heading - ori_z;
@@ -157,15 +153,25 @@ private:
         data.pose.pose.position.x = pos_x;
         data.pose.pose.position.y = pos_y;
 
-        RCLCPP_INFO(this->get_logger(), "x: %.2f, y: %.2f, theta: %.2f", pos_x, pos_y, rad2deg(ori_z));
+        data.pose.pose.orientation.w = rad2deg(ori_z);
+
+        data.twist.twist.linear.x = control_v;
+        data.twist.twist.angular.z = control_w;
 
         odometry_publisher->publish(data);
         
     }
 
+    void TargetPosCallback(const geometry_msgs::msg::Vector3::SharedPtr target)
+    {
+        x_target = target->x;
+        y_target = target->y;
+    }
+
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odometry_publisher;
     rclcpp::Subscription<my_robot_interfaces::msg::MotorOdomInfo>::SharedPtr odom_info_subscription;
     rclcpp::Publisher<my_robot_interfaces::msg::CmdDriveVel>::SharedPtr velocity_publisher;
+    rclcpp::Subscription<geometry_msgs::msg::Vector3>::SharedPtr target_subscriber;
     rclcpp::TimerBase::SharedPtr timer_;
 };
 

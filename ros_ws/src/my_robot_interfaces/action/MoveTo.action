@@ -1,0 +1,11 @@
+# Goal
+float64 x
+float64 y
+---
+# Result
+float64 end_x
+float64 end_y
+---
+# Feedback
+float64 current_x
+float64 current_y

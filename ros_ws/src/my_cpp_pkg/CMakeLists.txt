@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(my_robot_interfaces REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/../serial/include
@@ -21,6 +22,7 @@ add_executable(pid_diffdrive_control src/pid_diffdrive_control.cpp)
 ament_target_dependencies(pid_diffdrive_control
                           rclcpp
                           nav_msgs
+                          geometry_msgs
                           my_robot_interfaces)
 
 # arduino_motor_control node
