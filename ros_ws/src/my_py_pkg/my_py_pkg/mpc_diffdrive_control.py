@@ -32,7 +32,11 @@ class MPCDiffDriveController(Node):
         self.L_enc = 0
         self.R_enc = 0
 
-        self.target = np.array([4.0,3.5,0.0])
+        self.obstacle = np.array([1.0, 0.0])
+        self.obstacle_R = 0.03
+        self.safety_R = 0.025
+
+        self.target = np.array([0.0,0.0,0.0])
 
         self.pose_error = 0
         self.heading_error = 0
@@ -45,8 +49,15 @@ class MPCDiffDriveController(Node):
         self.ocp.model = model
         self.ocp.solver_options.tf = 2.0
         self.ocp.solver_options.N_horizon = 30
-        Q = np.diag([50, 50, 0])
+        Q = np.diag([50, 50, 50])
         R = np.diag([1, 1])
+
+        x = self.ocp.model.x[0]
+        y = self.ocp.model.x[1]
+
+        self.h_expr = (self.obstacle_R+self.safety_R)**2 - ((x - self.obstacle[0])**2 +  (y-self.obstacle[1])**2)
+        self.ocp.model.con_h_expr = self.h_expr
+
         self.ocp.cost.cost_type = 'NONLINEAR_LS'
         self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u)
         self.ocp.cost.yref = np.array([self.target[0], self.target[1], self.target[2], 0, 0])
@@ -62,6 +73,8 @@ class MPCDiffDriveController(Node):
         self.ocp.constraints.idxbu = np.array([0, 1])
         self.ocp.constraints.x0 = self.current_state
 
+        self.ocp.constraints.uh = np.array([0.0])
+        self.ocp.constraints.lh = np.array([-np.inf])
 
         self.ocp.solver_options.qp_solver = 'FULL_CONDENSING_QPOASES'
         self.ocp.solver_options.hessian_approx = 'GAUSS_NEWTON'
@@ -80,7 +93,7 @@ class MPCDiffDriveController(Node):
         self.ocp_solver.set(0,"lbx", self.current_state)
         self.ocp_solver.set(0,"ubx", self.current_state)
 
-        if self.pose_error >= 0.05 or self.heading_error >= np.deg2rad(1):
+        if self.pose_error >= 0.05 or abs(self.heading_error) >= np.deg2rad(1):
             status = self.ocp_solver.solve()
             if status !=0:
                 self.get_logger().warn("Solver failed with status: %d" % status)
