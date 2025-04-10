@@ -51,6 +51,7 @@ class MPCDiffDriveController(Node):
         self.ocp.solver_options.N_horizon = 30
         Q = np.diag([50, 50, 50])
         R = np.diag([1, 1])
+        Q_avoid = np.diag([1000])
 
         x = self.ocp.model.x[0]
         y = self.ocp.model.x[1]
@@ -58,10 +59,14 @@ class MPCDiffDriveController(Node):
         self.h_expr = (self.obstacle_R+self.safety_R)**2 - ((x - self.obstacle[0])**2 +  (y-self.obstacle[1])**2)
         self.ocp.model.con_h_expr = self.h_expr
 
+        dist_sq =  ((x - self.obstacle[0])**2 +  (y-self.obstacle[1])**2)
+        self.avoidance_cost = 1/(dist_sq + 1e-5)
+
         self.ocp.cost.cost_type = 'NONLINEAR_LS'
-        self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u)
+        #self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u)
         self.ocp.cost.yref = np.array([self.target[0], self.target[1], self.target[2], 0, 0])
-        self.ocp.cost.W = ca.diagcat(Q, R).full()
+        self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.y, self.avoidance_cost) 
+        self.ocp.cost.W = ca.diagcat(Q, R, Q_avoid).full()
         self.ocp.cost.cost_type_e = 'NONLINEAR_LS'
         self.ocp.cost.yref_e = self.target
         self.ocp.model.cost_y_expr_e = model.x
