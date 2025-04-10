@@ -64,11 +64,11 @@ class TargetHandlingServer : public rclcpp::Node
         publish_target_data(target_x, target_y);
         auto result = std::make_shared<MoveTo::Result>();
         double pos_error = sqrt(pow((target_x-current_x), 2) + pow((target_y-current_y), 2));
-
-        if (pos_error >=0.1)
+                
+        if (pos_error <=0.05)
         {
-            result->end_x = target_x;
-            result->end_y = target_y;
+            result->end_x = current_x;
+            result->end_y = current_y;
 
             goal_handle->succeed(result);
         }

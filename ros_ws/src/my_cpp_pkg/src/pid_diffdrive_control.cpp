@@ -40,10 +40,10 @@ private:
     double pos_error = {0};
     double heading_error = {0};
     double Kp_pos {0.6};
-    double Kp_head {0.8};
+    double Kp_head {0.9};
     
     double wheel_radius {0.05};
-    double wheel_base {0.245};
+    double wheel_base {0.3};
 
     float control_v {0};
     float control_w {0};
@@ -115,8 +115,8 @@ private:
         pos_error = sqrt(pow((x_target-pos_x),2) + pow((y_target-pos_y),2));
         double heading = atan2((y_target-pos_y), (x_target-pos_x));
         heading_error = heading - ori_z;
-        RCLCPP_INFO(this->get_logger(), "heading: %f | heading_error: %f", rad2deg(heading), rad2deg(heading_error));
-        if (pos_error >= 0.1)
+        //RCLCPP_INFO(this->get_logger(), "heading: %f | heading_error: %f", rad2deg(heading), rad2deg(heading_error));
+        if (pos_error >= 0.05)
         {
             heading_error = atan2(sin(heading_error), cos(heading_error));
 
@@ -154,6 +154,7 @@ private:
         data.pose.pose.position.y = pos_y;
 
         data.pose.pose.orientation.w = rad2deg(ori_z);
+        RCLCPP_INFO(this->get_logger(), "x: %f | y: %f | theta: %f", pos_x, pos_y, rad2deg(ori_z));
 
         data.twist.twist.linear.x = control_v;
         data.twist.twist.angular.z = control_w;
