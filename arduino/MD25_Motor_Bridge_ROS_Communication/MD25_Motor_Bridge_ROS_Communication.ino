@@ -7,7 +7,7 @@ const int ENCODER_INTERVAL = 10;
 const int CONTROL_INTERVAL = 20;
 
 
-const float base_L = 0.245;
+const float base_L = 0.29;
 const float wheel_R = 0.05;
 
 unsigned long prev_encoder_time = 0;
