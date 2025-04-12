@@ -20,11 +20,11 @@ class MPCDiffDriveController(Node):
         self.odometry_publisher = self.create_publisher(Odometry,"diffdrive/odometry",10)
         self.target_subscriber = self.create_subscription(Vector3, "diffdrive/target_pos", self.TargetPosCallback,10)
 
-        self.timer = self.create_timer(2.0/30, self.mpc_loop)
+        self.timer = self.create_timer(2.5/30, self.mpc_loop)
         
         self.current_state = np.array([0.0, 0.0, 0.0])
         self.wheel_radius = 0.05
-        self.wheel_base = 0.3
+        self.wheel_base = 0.29
 
         self.prev_L_enc = 0
         self.prev_R_enc = 0
@@ -33,8 +33,8 @@ class MPCDiffDriveController(Node):
         self.R_enc = 0
 
         self.obstacle = np.array([1.0, 0.0])
-        self.obstacle_R = 0.03
-        self.safety_R = 0.025
+        self.obstacle_R = 0.15
+        self.safety_R = 0.25
 
         self.target = np.array([0.0,0.0,0.0])
 
@@ -47,11 +47,11 @@ class MPCDiffDriveController(Node):
         self.ocp = AcadosOcp()
         model = export_diffdrive_model()
         self.ocp.model = model
-        self.ocp.solver_options.tf = 2.0
+        self.ocp.solver_options.tf = 2.5
         self.ocp.solver_options.N_horizon = 30
-        Q = np.diag([50, 50, 50])
+        Q = np.diag([4000, 4000, 4000])
         R = np.diag([1, 1])
-        Q_avoid = np.diag([1000])
+        Q_avoid = np.diag([1])
 
         x = self.ocp.model.x[0]
         y = self.ocp.model.x[1]
@@ -60,7 +60,7 @@ class MPCDiffDriveController(Node):
         self.ocp.model.con_h_expr = self.h_expr
 
         dist_sq =  ((x - self.obstacle[0])**2 +  (y-self.obstacle[1])**2)
-        self.avoidance_cost = 1/(dist_sq + 1e-5)
+        self.avoidance_cost = 10/(dist_sq + 1e-2)
 
         self.ocp.cost.cost_type = 'NONLINEAR_LS'
         #self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u)
