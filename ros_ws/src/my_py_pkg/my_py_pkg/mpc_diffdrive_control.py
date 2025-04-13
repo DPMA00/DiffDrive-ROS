@@ -49,9 +49,11 @@ class MPCDiffDriveController(Node):
         self.ocp.model = model
         self.ocp.solver_options.tf = 2.5
         self.ocp.solver_options.N_horizon = 30
-        Q = np.diag([4000, 4000, 4000])
+        Q = np.diag([2000, 2000, 2000])
         R = np.diag([1, 1])
         Q_avoid = np.diag([1])
+
+        Q_e = np.diag([4000, 4000, 4000])
 
         x = self.ocp.model.x[0]
         y = self.ocp.model.x[1]
@@ -64,8 +66,8 @@ class MPCDiffDriveController(Node):
 
         self.ocp.cost.cost_type = 'NONLINEAR_LS'
         #self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u)
-        self.ocp.cost.yref = np.array([self.target[0], self.target[1], self.target[2], 0, 0])
-        self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.y, self.avoidance_cost) 
+        self.ocp.cost.yref = np.array([self.target[0], self.target[1], self.target[2], 0, 0, 0])
+        self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u, self.avoidance_cost) 
         self.ocp.cost.W = ca.diagcat(Q, R, Q_avoid).full()
         self.ocp.cost.cost_type_e = 'NONLINEAR_LS'
         self.ocp.cost.yref_e = self.target
@@ -79,7 +81,7 @@ class MPCDiffDriveController(Node):
         self.ocp.constraints.x0 = self.current_state
 
         self.ocp.constraints.uh = np.array([0.0])
-        self.ocp.constraints.lh = np.array([-np.inf])
+        self.ocp.constraints.lh = np.array([-20000])
 
         self.ocp.solver_options.qp_solver = 'FULL_CONDENSING_QPOASES'
         self.ocp.solver_options.hessian_approx = 'GAUSS_NEWTON'
@@ -91,7 +93,7 @@ class MPCDiffDriveController(Node):
     def mpc_loop(self):
         
         for i in range(self.ocp.solver_options.N_horizon):
-            self.ocp_solver.set(i, "yref", np.array([self.target[0], self.target[1], self.target[2], 0, 0]))
+            self.ocp_solver.set(i, "yref", np.array([self.target[0], self.target[1], self.target[2], 0, 0, 0]))
         
         self.ocp_solver.set(self.ocp.solver_options.N_horizon,"yref",self.target)
         
