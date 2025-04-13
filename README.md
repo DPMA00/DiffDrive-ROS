@@ -6,7 +6,7 @@ This repo contains an experimental ROS2-based project that integrates Raspberry 
 
 ### Structure
 
-The repository is organized as a ROS2 workspace (`ros_ws`) containing several packages, and an `arduino` folder with the microcontroller firmware. ROS packages include custom interfaces, a bringup/launch package, and external hardware drivers (e.g. a YDLidar driver for laser scans and Serial for serial communication). This structure separates high-level control logic from low-level hardware interfacing, making it easier to understand and extend.
+The repository is organized as a ROS2 workspace (`ros_ws`) containing several packages, and an `arduino` folder with the microcontroller firmware. This structure separates high-level control logic from low-level hardware interfacing.
 
 #### Key components
 - Arduino Firmware (`arduino/MD25_Motor_Bridge_ROS_Communication.ino`): Runs on the Arduino microcontroller. It interfaces with the MD25 motor driver (for motor control and encoder readings) and implements a PID control loop for motor speeds. It receives high-level velocity commands over serial which are then transformed into wheel speeds by calculating the inverse kinematics. It also sends back encoder counts and wheel speeds over serial at 50 Hz.
@@ -90,10 +90,11 @@ sudo usermod -a -G dialout $USER
 ```bash
 colcon build
 ```
-Now in the following order run:
+Now activate your ros workspace and your virtual environment in the following order:
 
 ```
-source ~/.bashrc
+source opt/ros/jazzy/setup.bash
+source ~/Diffdrive/ros_ws/setup.bash
 source virtual_env/name/bin/activate
 ```
 
