@@ -13,13 +13,14 @@
   <build_depend>geometry_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
   <build_depend>acados_template</build_depend>
-  
+  <build_depend>tf2_ros</build_depend>
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>my_robot_interfaces</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>nav_msgs</exec_depend>
   <exec_depend>acados_template</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
