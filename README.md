@@ -1,6 +1,7 @@
 # Differential Drive - ROS2
 
-![](demonstration.gif)
+![demonstration](https://github.com/user-attachments/assets/892e336d-d1fe-4e97-97a8-e3792c158ada)
+
 
 See installations instructions below!
 
