@@ -1,8 +1,12 @@
 # Differential Drive - ROS2
+
+![](demonstration.gif)
+
 See installations instructions below!
 
 ## Overview
 This repo contains an experimental ROS2-based project that integrates Raspberry Pi (running ROS2) with an Arduino microcontroller to control a two-wheeled differential drive robot. My personal goal for this project was to bridge the gap between advanced control algorithms and actual hardware. I definitely underestimated the difficulty of this as simulations are a totally different thing compared to real-world hardware!
+
 
 ### Structure
 
