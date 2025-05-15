@@ -1,0 +1,9 @@
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/actions_cpp/src/target_handling_actionserver.cpp:[m[K In member function ‘[01m[Krclcpp_action::GoalResponse TargetHandlingServer::[01;32m[Kgoal_callback[m[K(const rclcpp_action::GoalUUID&, std::shared_ptr<const my_robot_interfaces::action::MoveTo_Goal_<std::allocator<void> > >)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/actions_cpp/src/target_handling_actionserver.cpp:46:78:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kuuid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   46 | ::GoalResponse goal_callback([01;35m[Kconst rclcpp_action::GoalUUID &uuid[m[K, std::shared_ptr<const MoveTo::Goal> goal)
+      |                              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/actions_cpp/src/target_handling_actionserver.cpp:46:120:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   46 | clcpp_action::GoalUUID &uuid, [01;35m[Kstd::shared_ptr<const MoveTo::Goal> goal[m[K)
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+

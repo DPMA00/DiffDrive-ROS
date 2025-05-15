@@ -1,0 +1,37 @@
+[0.036s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/serial -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial
+[0.146s] -- The C compiler identification is GNU 13.3.0
+[0.248s] -- The CXX compiler identification is GNU 13.3.0
+[0.279s] -- Detecting C compiler ABI info
+[0.433s] -- Detecting C compiler ABI info - done
+[0.451s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.454s] -- Detecting C compile features
+[0.455s] -- Detecting C compile features - done
+[0.467s] -- Detecting CXX compiler ABI info
+[0.626s] -- Detecting CXX compiler ABI info - done
+[0.642s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.644s] -- Detecting CXX compile features
+[0.644s] -- Detecting CXX compile features - done
+[0.645s] -- Configuring done (0.6s)
+[0.652s] -- Generating done (0.0s)
+[0.653s] [33mCMake Warning:
+[0.653s]   Manually-specified variables were not used by the project:
+[0.653s] 
+[0.654s]     CATKIN_INSTALL_INTO_PREFIX_ROOT
+[0.654s] 
+[0.654s] [0m
+[0.656s] -- Build files have been written to: /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial
+[0.663s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/serial -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial
+[0.665s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial -- -j8 -l8
+[0.753s] [ 66%] Built target serial
+[0.785s] [100%] Built target serial_example
+[0.804s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial -- -j8 -l8
+[0.823s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial
+[0.836s] -- Install configuration: ""
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/lib/libserial.a
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl/win.h
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl/unix.h
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/serial.h
+[0.837s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/v8stdint.h
+[0.839s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial

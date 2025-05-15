@@ -1,0 +1,65 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 28.1.9 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+-- Found my_robot_interfaces: 0.0.0 (/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake)
+-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+-- Configuring done (5.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dpma/projects/DiffDrive-ROS/ros_ws/build/actions_cpp
+[ 25%] [32mBuilding CXX object CMakeFiles/target_handling_actionserver.dir/src/target_handling_actionserver.cpp.o[0m
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/actions_cpp/src/target_handling_actionserver.cpp:[m[K In member function ‘[01m[Krclcpp_action::GoalResponse TargetHandlingServer::[01;32m[Kgoal_callback[m[K(const rclcpp_action::GoalUUID&, std::shared_ptr<const my_robot_interfaces::action::MoveTo_Goal_<std::allocator<void> > >)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/actions_cpp/src/target_handling_actionserver.cpp:46:78:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kuuid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   46 | ::GoalResponse goal_callback([01;35m[Kconst rclcpp_action::GoalUUID &uuid[m[K, std::shared_ptr<const MoveTo::Goal> goal)
+      |                              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/actions_cpp/src/target_handling_actionserver.cpp:46:120:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   46 | clcpp_action::GoalUUID &uuid, [01;35m[Kstd::shared_ptr<const MoveTo::Goal> goal[m[K)
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[ 50%] [32m[1mLinking CXX executable target_handling_actionserver[0m
+[ 50%] Built target target_handling_actionserver
+[ 75%] [32mBuilding CXX object CMakeFiles/target_handling_actionclient.dir/src/target_handling_actionclient.cpp.o[0m
+[100%] [32m[1mLinking CXX executable target_handling_actionclient[0m
+[100%] Built target target_handling_actionclient
+-- Install configuration: ""
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/lib/actions_cpp/target_handling_actionserver
+-- Set non-toolchain portion of runtime path of "/home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/lib/actions_cpp/target_handling_actionserver" to ""
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/lib/actions_cpp/target_handling_actionclient
+-- Set non-toolchain portion of runtime path of "/home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/lib/actions_cpp/target_handling_actionclient" to ""
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/ament_index/resource_index/package_run_dependencies/actions_cpp
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/ament_index/resource_index/parent_prefix_path/actions_cpp
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/environment/ament_prefix_path.sh
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/environment/ament_prefix_path.dsv
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/environment/path.sh
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/environment/path.dsv
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/local_setup.bash
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/local_setup.sh
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/local_setup.zsh
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/local_setup.dsv
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/package.dsv
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/ament_index/resource_index/packages/actions_cpp
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/cmake/actions_cppConfig.cmake
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/cmake/actions_cppConfig-version.cmake
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp/share/actions_cpp/package.xml

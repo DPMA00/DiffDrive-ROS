@@ -1,0 +1,262 @@
+[0.034s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_robot_interfaces -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces
+[0.129s] -- The C compiler identification is GNU 13.3.0
+[0.213s] -- The CXX compiler identification is GNU 13.3.0
+[0.233s] -- Detecting C compiler ABI info
+[0.354s] -- Detecting C compiler ABI info - done
+[0.371s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.371s] -- Detecting C compile features
+[0.372s] -- Detecting C compile features - done
+[0.385s] -- Detecting CXX compiler ABI info
+[0.515s] -- Detecting CXX compiler ABI info - done
+[0.533s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.534s] -- Detecting CXX compile features
+[0.534s] -- Detecting CXX compile features - done
+[0.541s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.777s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.952s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.963s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.103s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.218s] -- Found rosidl_adapter: 4.6.5 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.888s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[2.330s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.880s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.885s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[3.018s] -- Found PythonExtra: /usr/bin/python3  
+[3.437s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[3.476s] -- Configuring done (3.4s)
+[3.522s] -- Generating done (0.0s)
+[3.536s] -- Build files have been written to: /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces
+[3.546s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_robot_interfaces -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces
+[3.546s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces -- -j8 -l8
+[3.598s] [  1%] Built target my_robot_interfaces__rosidl_generator_type_description
+[3.609s] [  1%] Built target ament_cmake_python_copy_my_robot_interfaces
+[3.621s] [  3%] Built target my_robot_interfaces__cpp
+[3.627s] [ 25%] Built target my_robot_interfaces__rosidl_generator_c
+[3.662s] [ 34%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c
+[3.662s] [ 43%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[3.663s] [ 53%] Built target my_robot_interfaces__rosidl_typesupport_c
+[3.666s] [ 62%] Built target my_robot_interfaces__rosidl_typesupport_cpp
+[3.668s] [ 71%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c
+[3.669s] [ 81%] Built target my_robot_interfaces__rosidl_typesupport_introspection_cpp
+[3.690s] [ 81%] Built target my_robot_interfaces
+[3.713s] [ 82%] Built target my_robot_interfaces__py
+[3.741s] [ 90%] Built target my_robot_interfaces__rosidl_generator_py
+[3.766s] [100%] Built target my_robot_interfaces_s__rosidl_typesupport_c
+[3.766s] [100%] Built target my_robot_interfaces_s__rosidl_typesupport_fastrtps_c
+[3.766s] [100%] Built target my_robot_interfaces_s__rosidl_typesupport_introspection_c
+[3.860s] running egg_info
+[3.883s] writing my_robot_interfaces.egg-info/PKG-INFO
+[3.883s] writing dependency_links to my_robot_interfaces.egg-info/dependency_links.txt
+[3.883s] writing top-level names to my_robot_interfaces.egg-info/top_level.txt
+[3.952s] reading manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'
+[3.953s] writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'
+[3.976s] [100%] Built target ament_cmake_python_build_my_robot_interfaces_egg
+[3.988s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces -- -j8 -l8
+[3.990s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces
+[3.998s] -- Install configuration: ""
+[3.998s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/my_robot_interfaces
+[3.998s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/CmdDriveVel.json
+[3.998s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorInfo.json
+[3.998s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorOdomInfo.json
+[3.998s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/MoveTo.json
+[3.998s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_info.h
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_odom_info.h
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/cmd_drive_vel.h
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__functions.h
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__struct.h
+[3.999s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__type_support.c
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__type_support.h
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__type_support.h
+[3.999s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__type_support.c
+[3.999s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__description.c
+[4.000s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__type_support.c
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__functions.c
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__functions.c
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__description.c
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__functions.c
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__functions.h
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__description.c
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__functions.h
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__struct.h
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__struct.h
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__type_support.h
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action
+[4.000s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/move_to.h
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__functions.h
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__struct.h
+[4.001s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__type_support.c
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__type_support.h
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__functions.c
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__description.c
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.sh
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.dsv
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[4.001s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__rosidl_typesupport_fastrtps_c.h
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__rosidl_typesupport_fastrtps_c.h
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__rosidl_typesupport_fastrtps_c.h
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__rosidl_typesupport_fastrtps_c.h
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.002s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[4.003s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__type_support.c
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__rosidl_typesupport_introspection_c.h
+[4.003s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__type_support.c
+[4.003s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__type_support.c
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__rosidl_typesupport_introspection_c.h
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__rosidl_typesupport_introspection_c.h
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail
+[4.003s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__type_support.c
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__rosidl_typesupport_introspection_c.h
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so
+[4.003s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_info.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_odom_info.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/cmd_drive_vel.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__struct.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__struct.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__builder.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__struct.hpp
+[4.004s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__type_support.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__type_support.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__builder.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__traits.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__builder.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__type_support.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__traits.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__traits.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__struct.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__type_support.hpp
+[4.005s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__builder.hpp
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__traits.hpp
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/move_to.hpp
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/dds_fastrtps
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__rosidl_typesupport_fastrtps_cpp.hpp
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__rosidl_typesupport_fastrtps_cpp.hpp
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__rosidl_typesupport_fastrtps_cpp.hpp
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action
+[4.006s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/dds_fastrtps
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__rosidl_typesupport_fastrtps_cpp.hpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__type_support.cpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__type_support.cpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__type_support.cpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/cmd_drive_vel__rosidl_typesupport_introspection_cpp.hpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_odom_info__rosidl_typesupport_introspection_cpp.hpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_info__rosidl_typesupport_introspection_cpp.hpp
+[4.007s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__rosidl_typesupport_introspection_cpp.hpp
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/move_to__type_support.cpp
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.sh
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.dsv
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces-0.0.0-py3.12.egg-info
+[4.008s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[4.008s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[4.008s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[4.008s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[4.008s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/_motor_info.py
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/_cmd_drive_vel_s.c
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/_motor_odom_info_s.c
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/_cmd_drive_vel.py
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/_motor_odom_info.py
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/__init__.py
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg/_motor_info_s.c
+[4.009s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.so
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.010s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/__init__.py
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.so
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/action
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/action/_move_to.py
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/action/_move_to_s.c
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/action/__init__.py
+[4.010s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[4.045s] Listing '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces'...
+[4.045s] Compiling '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/__init__.py'...
+[4.045s] Listing '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/action'...
+[4.045s] Listing '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/msg'...
+[4.050s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[4.051s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.so
+[4.051s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.so
+[4.051s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so
+[4.051s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/CmdDriveVel.idl
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorInfo.idl
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorOdomInfo.idl
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/MoveTo.idl
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/CmdDriveVel.msg
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorInfo.msg
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorOdomInfo.msg
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/MoveTo.action
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/ament_index/resource_index/parent_prefix_path/my_robot_interfaces
+[4.052s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.sh
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.dsv
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.sh
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.dsv
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.bash
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.sh
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.zsh
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.dsv
+[4.053s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/ament_index/resource_index/packages/my_robot_interfaces
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport.cmake
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[4.053s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cppExport.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.054s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.055s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig.cmake
+[4.056s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig-version.cmake
+[4.056s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.xml
+[4.058s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_interfaces

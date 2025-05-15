@@ -1,0 +1,31 @@
+[ 33%] Built target serial
+[ 50%] Built target pid_diffdrive_control
+[ 66%] Built target odometry_node
+[ 83%] Built target serial_example
+[100%] Built target arduino_bridge_node
+-- Install configuration: ""
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib/my_cpp_pkg/arduino_bridge_node
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib/my_cpp_pkg/pid_diffdrive_control
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib/my_cpp_pkg/odometry_node
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_pkg
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_pkg
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.sh
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.sh
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.dsv
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.bash
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.sh
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.zsh
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.dsv
+-- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.dsv
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/ament_index/resource_index/packages/my_cpp_pkg
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig.cmake
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig-version.cmake
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.xml
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib/libserial.a
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/include/serial
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/include/serial/impl
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/include/serial/impl/win.h
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/include/serial/impl/unix.h
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/include/serial/serial.h
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/include/serial/v8stdint.h

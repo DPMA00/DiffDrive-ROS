@@ -1,0 +1,4 @@
+Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk -- -j8 -l8
+Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk -- -j8 -l8
+Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk
+Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_sdk

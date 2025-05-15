@@ -1,0 +1,162 @@
+In file included from [01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/v8stdint.h:142[m[K,
+                 from [01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:4[m[K,
+                 from [01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/src/CYdLidar.h:48[m[K,
+                 from [01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:16[m[K:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:[m[K In function ‘[01m[Kbool ydlidar::core::base::[01;32m[KfileExists[m[K(const std::string&)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_ino[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+  183 |   struct stat info = {0[01;35m[K}[m[K;
+      |                        [01;35m[K^[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_nlink[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_mode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_uid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_gid[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::__pad0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_rdev[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_size[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_blksize[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_blocks[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_atim[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_mtim[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::st_ctim[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/ydlidar.h:183:24:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kstat::__glibc_reserved[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+In file included from [01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:5[m[K:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:[m[K In static member function ‘[01m[Kstatic ydlidar::core::base::Thread ydlidar::core::base::Thread::[01;32m[KcreateThread[m[K(thread_proc_t, void*)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:54:42:[m[K [01;35m[Kwarning: [m[Kcast between incompatible function types from ‘[01m[Kthread_proc_t[m[K’ {aka ‘[01m[Klong unsigned int (*)(void*)[m[K’} to ‘[01m[Kvoid* (*)(void*)[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-function-type-Wcast-function-type]8;;[m[K]
+   54 |                                    NULL, [01;35m[K(void *(*)(void *))proc[m[K,
+      |                                          [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:[m[K In member function ‘[01m[Kint ydlidar::core::base::Thread::[01;32m[Kjoin[m[K(long unsigned int)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:135:46:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%X[m[K’ expects argument of type ‘[01m[Kunsigned int[m[K’, but argument 2 has type ‘[01m[K_size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  135 |           printf("[YDLIDAR DEBUG] Thread [0x[01;35m[K%X[m[K] ready to cancel[%d]\n", [32m[K_handle[m[K, s);
+      |                                             [01;35m[K~^[m[K                          [32m[K~~~~~~~[m[K
+      |                                              [01;35m[K|[m[K                          [32m[K|[m[K
+      |                                              [01;35m[Kunsigned int[m[K               [32m[K_size_t {aka long unsigned int}[m[K
+      |                                             [32m[K%lX[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:137:46:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%X[m[K’ expects argument of type ‘[01m[Kunsigned int[m[K’, but argument 2 has type ‘[01m[K_size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  137 |           printf("[YDLIDAR DEBUG] Thread [0x[01;35m[K%X[m[K] ready to cancel[%d] time[%u]\n",
+      |                                             [01;35m[K~^[m[K
+      |                                              [01;35m[K|[m[K
+      |                                              [01;35m[Kunsigned int[m[K
+      |                                             [32m[K%lX[m[K
+  138 |             [32m[K_handle[m[K, s, getms() - t);
+      |             [32m[K~~~~~~~[m[K                           
+      |             [32m[K|[m[K
+      |             [32m[K_size_t {aka long unsigned int}[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:141:42:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%X[m[K’ expects argument of type ‘[01m[Kunsigned int[m[K’, but argument 2 has type ‘[01m[K_size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  141 |             printf("[YDLIDAR] Thread [0x[01;35m[K%X[m[K] has been canceled in other thread\n", [32m[K_handle[m[K);
+      |                                         [01;35m[K~^[m[K                                        [32m[K~~~~~~~[m[K
+      |                                          [01;35m[K|[m[K                                        [32m[K|[m[K
+      |                                          [01;35m[Kunsigned int[m[K                             [32m[K_size_t {aka long unsigned int}[m[K
+      |                                         [32m[K%lX[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:146:74:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%X[m[K’ expects argument of type ‘[01m[Kunsigned int[m[K’, but argument 3 has type ‘[01m[K_size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  146 |             fprintf(stderr, "[YDLIDAR] An error occurred while thread[0x[01;35m[K%X[m[K] cancelled!\n", [32m[K_handle[m[K);
+      |                                                                         [01;35m[K~^[m[K                 [32m[K~~~~~~~[m[K
+      |                                                                          [01;35m[K|[m[K                 [32m[K|[m[K
+      |                                                                          [01;35m[Kunsigned int[m[K      [32m[K_size_t {aka long unsigned int}[m[K
+      |                                                                         [32m[K%lX[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/base/thread.h:150:40:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%X[m[K’ expects argument of type ‘[01m[Kunsigned int[m[K’, but argument 2 has type ‘[01m[K_size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  150 |           printf("[YDLIDAR] Thread [0x[01;35m[K%X[m[K] has been canceled\n", [32m[K_handle[m[K);
+      |                                       [01;35m[K~^[m[K                        [32m[K~~~~~~~[m[K
+      |                                        [01;35m[K|[m[K                        [32m[K|[m[K
+      |                                        [01;35m[Kunsigned int[m[K             [32m[K_size_t {aka long unsigned int}[m[K
+      |                                       [32m[K%lX[m[K
+In file included from [01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:8[m[K:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/ydlidar_protocol.h:[m[K At global scope:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/ydlidar_protocol.h:291:22:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kdevice_info::firmware_version[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+  291 |   device_info di = {0[01;35m[K}[m[K;
+      |                      [01;35m[K^[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/ydlidar_protocol.h:291:22:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kdevice_info::hardware_version[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/ydlidar_protocol.h:291:22:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[Kdevice_info::serialnum[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual bool ydlidar::core::common::DriverInterface::[01;32m[KgetDeviceInfoEx[m[K(device_info&, int)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:285:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktype[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  285 |         virtual bool getDeviceInfoEx(device_info &di, [01;35m[Kint type=EPT_Module[m[K)
+      |                                                       [01;35m[K~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KgetScanFrequency[m[K(scan_frequency&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:340:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfrequency[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  340 |         virtual result_t getScanFrequency([01;35m[Kscan_frequency &frequency[m[K,
+      |                                           [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:341:52:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  341 |                                           [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                           [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetScanFrequencyAdd[m[K(scan_frequency&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:355:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfrequency[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  355 |         virtual result_t setScanFrequencyAdd([01;35m[Kscan_frequency &frequency[m[K,
+      |                                              [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:356:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  356 |                                              [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                              [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetScanFrequencyDis[m[K(scan_frequency&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:370:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfrequency[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  370 |         virtual result_t setScanFrequencyDis([01;35m[Kscan_frequency &frequency[m[K,
+      |                                              [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:371:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  371 |                                              [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                              [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetScanFrequencyAddMic[m[K(scan_frequency&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:385:65:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfrequency[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  385 |         virtual result_t setScanFrequencyAddMic([01;35m[Kscan_frequency &frequency[m[K,
+      |                                                 [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:386:58:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  386 |                                                 [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                                 [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetScanFrequencyDisMic[m[K(scan_frequency&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:400:65:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfrequency[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  400 |         virtual result_t setScanFrequencyDisMic([01;35m[Kscan_frequency &frequency[m[K,
+      |                                                 [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:401:58:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  401 |                                                 [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                                 [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KgetSamplingRate[m[K(sampling_rate&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:415:57:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krate[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  415 |         virtual result_t getSamplingRate([01;35m[Ksampling_rate &rate[m[K,
+      |                                          [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:416:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  416 |                                          [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                          [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetSamplingRate[m[K(sampling_rate&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:430:57:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krate[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  430 |         virtual result_t setSamplingRate([01;35m[Ksampling_rate &rate[m[K,
+      |                                          [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:431:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  431 |                                          [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                          [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KgetZeroOffsetAngle[m[K(offset_angle&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:445:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  445 |         virtual result_t getZeroOffsetAngle([01;35m[Koffset_angle &angle[m[K,
+      |                                             [01;35m[K~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:446:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  446 |                                             [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                             [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetScanHeartbeat[m[K(scan_heart_beat&, uint32_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:461:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kbeat[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  461 |         virtual result_t setScanHeartbeat([01;35m[Kscan_heart_beat &beat[m[K,
+      |                                           [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:462:52:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  462 |                                           [01;35m[Kuint32_t timeout = DEFAULT_TIMEOUT[m[K)
+      |                                           [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:[m[K In member function ‘[01m[Kvirtual result_t ydlidar::core::common::DriverInterface::[01;32m[KsetWorkMode[m[K(int, uint8_t)[m[K’:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:493:42:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  493 |         virtual result_t setWorkMode([01;35m[Kint mode = 0[m[K, uint8_t addr = 0x00) {
+      |                                      [01;35m[K~~~~^~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk/include/core/common/DriverInterface.h:493:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kaddr[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  493 |         virtual result_t setWorkMode(int mode = 0, [01;35m[Kuint8_t addr = 0x00[m[K) {
+      |                                                    [01;35m[K~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:[m[K In lambda function:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:191:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krequest_header[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  191 |     [&laser]([01;35m[Kconst std::shared_ptr<rmw_request_id_t> request_header[m[K,
+      |              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:192:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  192 |   [01;35m[Kconst std::shared_ptr<std_srvs::srv::Empty::Request> req[m[K,
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:193:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kresponse[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  193 |   [01;35m[Kstd::shared_ptr<std_srvs::srv::Empty::Response> response[m[K) -> bool
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:[m[K In lambda function:
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:201:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krequest_header[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  201 |     [&laser]([01;35m[Kconst std::shared_ptr<rmw_request_id_t> request_header[m[K,
+      |              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:202:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  202 |   [01;35m[Kconst std::shared_ptr<std_srvs::srv::Empty::Request> req[m[K,
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:203:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kresponse[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  203 |   [01;35m[Kstd::shared_ptr<std_srvs::srv::Empty::Response> response[m[K) -> bool
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K

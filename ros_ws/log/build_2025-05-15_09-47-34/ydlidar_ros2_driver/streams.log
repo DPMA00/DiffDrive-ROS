@@ -1,0 +1,90 @@
+[0.024s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver
+[0.127s] -- The C compiler identification is GNU 13.3.0
+[0.259s] -- The CXX compiler identification is GNU 13.3.0
+[0.299s] -- Detecting C compiler ABI info
+[0.468s] -- Detecting C compiler ABI info - done
+[0.493s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.493s] -- Detecting C compile features
+[0.494s] -- Detecting C compile features - done
+[0.509s] -- Detecting CXX compiler ABI info
+[0.690s] -- Detecting CXX compiler ABI info - done
+[0.713s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.714s] -- Detecting CXX compile features
+[0.714s] -- Detecting CXX compile features - done
+[0.723s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.051s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.254s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.383s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.420s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.470s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.507s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.664s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.674s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.840s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.877s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.926s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.051s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[2.145s] -- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)
+[2.185s] -- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)
+[2.216s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.380s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.385s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.386s] -- Configured cppcheck include dirs: /home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver/src
+[2.386s] -- Configured cppcheck exclude dirs and/or files: 
+[2.391s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.392s] -- Configured cpplint exclude dirs and/or files: 
+[2.393s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.393s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.396s] -- Added test 'lint_cmake' to check CMake code style
+[2.397s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.403s] -- Added test 'uncrustify' to check C / C++ code style
+[2.403s] -- Configured uncrustify additional arguments: 
+[2.404s] -- Added test 'xmllint' to check XML markup files
+[2.407s] -- Configuring done (2.4s)
+[2.427s] -- Generating done (0.0s)
+[2.433s] -- Build files have been written to: /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver
+[2.449s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/ydlidar_ros2_driver -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver
+[2.451s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver -- -j8 -l8
+[2.520s] [ 50%] Built target ydlidar_ros2_driver_client
+[2.520s] [100%] Built target ydlidar_ros2_driver_node
+[2.533s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver -- -j8 -l8
+[2.535s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver
+[2.545s] -- Install configuration: ""
+[2.545s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_node
+[2.546s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_client
+[2.546s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch
+[2.546s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch/ydlidar_launch.py
+[2.546s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch/ydlidar_launch_view.py
+[2.546s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch/ydlidar.py
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/TminiPro.yaml
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/TEA.yaml
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X4.yaml
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G1.yaml
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X4-Pro.yaml
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G2.yaml
+[2.547s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G6.yaml
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/TG.yaml
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/GS2.yaml
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/ydlidar.yaml
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X2.yaml
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/startup
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/startup/initenv.sh
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/config
+[2.548s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/config/ydlidar.rviz
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ament_index/resource_index/package_run_dependencies/ydlidar_ros2_driver
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ament_index/resource_index/parent_prefix_path/ydlidar_ros2_driver
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/ament_prefix_path.sh
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/ament_prefix_path.dsv
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/path.sh
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/path.dsv
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.bash
+[2.549s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.sh
+[2.550s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.zsh
+[2.550s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.dsv
+[2.550s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.dsv
+[2.550s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ament_index/resource_index/packages/ydlidar_ros2_driver
+[2.550s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/cmake/ydlidar_ros2_driverConfig.cmake
+[2.550s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/cmake/ydlidar_ros2_driverConfig-version.cmake
+[2.550s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.xml
+[2.551s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/ydlidar_ros2_driver

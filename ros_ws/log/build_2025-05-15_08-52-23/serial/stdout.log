@@ -1,0 +1,10 @@
+[ 66%] Built target serial
+[100%] Built target serial_example
+-- Install configuration: ""
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/lib/libserial.a
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl/win.h
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl/unix.h
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/serial.h
+-- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/v8stdint.h

@@ -1,0 +1,14 @@
+[0.029s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial -- -j8 -l8
+[0.104s] [ 66%] Built target serial
+[0.141s] [100%] Built target serial_example
+[0.187s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial -- -j8 -l8
+[0.190s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial
+[0.205s] -- Install configuration: ""
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/lib/libserial.a
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl/win.h
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/impl/unix.h
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/serial.h
+[0.206s] -- Up-to-date: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/serial/include/serial/v8stdint.h
+[0.211s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/serial

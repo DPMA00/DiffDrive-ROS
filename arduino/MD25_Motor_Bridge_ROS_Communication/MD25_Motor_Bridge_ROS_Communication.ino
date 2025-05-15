@@ -1,25 +1,32 @@
 #include <Wire.h>
-#define MD25_ADDRESS 0x58
+#include <stdint.h>
 
-const int TICKS_PER_REV = 360;
-const int ZEROVEL = 128;
-const int ENCODER_INTERVAL = 10;
-const int CONTROL_INTERVAL = 20;
+#define MD25_ADDRESS 0x58
+#define TICKS_PER_REV 360
+#define ZEROVEL 128
+#define ENCODER_INTERVAL 10 //ms
+#define CONTROL_INTERVAL 20 //ms
 
 
 const float base_L = 0.29;
 const float wheel_R = 0.05;
 
+/* Encoder state */
 unsigned long prev_encoder_time = 0;
 unsigned long prev_control_time = 0;
-long prev_encoder1 = 0;
-long prev_encoder2 = 0;
+int32_t prev_encoder1 = 0;
+int32_t prev_encoder2 = 0;
+
+/* Velocities */
+
 float rpm1 = 0;
 float rpm2 = 0;
 
-float target_vx =0;// = 0.1; // max velocity about 1ms-1
-float target_omega =0;// = 0; // max angular velocty about 13.3 rads-1
+volatile float target_vx =0;// = 0.1; // max velocity about 1ms-1
+volatile float target_omega =0;// = 0; // max angular velocty about 13.3 rads-1
 
+
+/* PID Parameters */
 
 float Kp = 0.2;
 float Ki = 1.2;
@@ -37,6 +44,8 @@ float smoothed_rpm2 = 0;
 const float alpha = 0.2;  // smoothing factor
 
 
+/* Helper functions */
+
 struct Phi {
   float Phi1;
   float Phi2;
@@ -45,7 +54,7 @@ struct Phi {
 
 void setup() {
   Wire.begin();
-  Serial.begin(115200);
+  Serial.begin(57600);
   Serial.println("===== Arduino booted =====");
   delay(500);
   // Set mode 0 (Motor1 = reg 0, Motor2 = reg 1)
@@ -111,7 +120,7 @@ float computeRPM(long encoder_val, long prev_encoder, float dt) {
 
   long d_encoder = encoder_val - prev_encoder;
 
-  if (abs(d_encoder) > 100000) {
+  if (abs(d_encoder) > 1000) {
     //Serial.println("Spike detected in encoder!");
     return 0;
   }
@@ -169,11 +178,6 @@ void loop() {
     
       target_vx = -vxStr.toFloat();
       target_omega = -omegaStr.toFloat();
-    
-      Serial.print("Parsed target_vx: ");
-      Serial.print(target_vx);
-      Serial.print(" | target_omega: ");
-      Serial.println(target_omega);
     } else {
       Serial.println("Malformed input. Could not parse target velocities.");
     }
@@ -232,6 +236,7 @@ void loop() {
     Wire.write(ZEROVEL + motor2_out);
     Wire.endTransmission();
 
+    Serial.print('$');
     Serial.print(prev_encoder2);
     Serial.print(" ");
     Serial.print(prev_encoder1);

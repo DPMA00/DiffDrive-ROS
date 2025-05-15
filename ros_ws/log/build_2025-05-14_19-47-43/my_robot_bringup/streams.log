@@ -1,0 +1,42 @@
+[0.028s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_robot_bringup -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup
+[8.077s] -- The C compiler identification is GNU 13.3.0
+[15.716s] -- The CXX compiler identification is GNU 13.3.0
+[16.947s] -- Detecting C compiler ABI info
+[18.848s] -- Detecting C compiler ABI info - done
+[18.866s] -- Check for working C compiler: /usr/bin/cc - skipped
+[18.912s] -- Detecting C compile features
+[18.998s] -- Detecting C compile features - done
+[19.425s] -- Detecting CXX compiler ABI info
+[20.100s] -- Detecting CXX compiler ABI info - done
+[20.119s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[20.120s] -- Detecting CXX compile features
+[20.120s] -- Detecting CXX compile features - done
+[21.772s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[24.811s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[33.030s] -- Configuring done (33.0s)
+[33.044s] -- Generating done (0.0s)
+[33.107s] -- Build files have been written to: /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup
+[33.131s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_robot_bringup -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup
+[33.138s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup -- -j8 -l8
+[33.273s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup -- -j8 -l8
+[33.275s] Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup
+[33.288s] -- Install configuration: ""
+[33.288s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup//launch
+[33.289s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup//launch/diffdrive_robot.launch.xml
+[33.418s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup//launch/diffdrive_slam_launch.py
+[33.419s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/ament_index/resource_index/package_run_dependencies/my_robot_bringup
+[33.424s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/ament_index/resource_index/parent_prefix_path/my_robot_bringup
+[33.424s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.sh
+[33.425s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.dsv
+[33.425s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/environment/path.sh
+[33.426s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/environment/path.dsv
+[33.427s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.bash
+[33.428s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.sh
+[33.428s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.zsh
+[33.429s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.dsv
+[33.430s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/package.dsv
+[33.431s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/ament_index/resource_index/packages/my_robot_bringup
+[33.432s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig.cmake
+[33.432s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig-version.cmake
+[33.433s] -- Installing: /home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup/share/my_robot_bringup/package.xml
+[33.438s] Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_robot_bringup

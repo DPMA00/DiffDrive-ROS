@@ -1,0 +1,270 @@
+[0.109s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'my_cpp_pkg', '--cmake-clean-cache']
+[0.109s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['my_cpp_pkg'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=True, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x743e0adb9700>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x743e0aed1bb0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x743e0aed1bb0>>, mixin_verb=('build',))
+[0.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.145s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.146s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.146s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/dpma/projects/DiffDrive-ROS/ros_ws'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'ignore_ament_install'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extensions ['colcon_pkg']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'colcon_pkg'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extensions ['colcon_meta']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'colcon_meta'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extensions ['ros']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'ros'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extensions ['cmake', 'python']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'cmake'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'python'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extensions ['python_setup_py']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code) by extension 'python_setup_py'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extensions ['ignore', 'ignore_ament_install']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'ignore'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'ignore_ament_install'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extensions ['colcon_pkg']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'colcon_pkg'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extensions ['colcon_meta']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'colcon_meta'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extensions ['ros']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'ros'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extensions ['cmake', 'python']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'cmake'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'python'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extensions ['python_setup_py']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_constraints) by extension 'python_setup_py'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extensions ['ignore', 'ignore_ament_install']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'ignore'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'ignore_ament_install'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extensions ['colcon_pkg']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'colcon_pkg'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extensions ['colcon_meta']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'colcon_meta'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extensions ['ros']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'ros'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extensions ['cmake', 'python']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'cmake'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'python'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extensions ['python_setup_py']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_cost) by extension 'python_setup_py'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'ignore_ament_install'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extensions ['colcon_pkg']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'colcon_pkg'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extensions ['colcon_meta']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'colcon_meta'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extensions ['ros']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'ros'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extensions ['cmake', 'python']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'cmake'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'python'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extensions ['python_setup_py']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(c_generated_code/basic_diffdrive_model_model) by extension 'python_setup_py'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extensions ['ignore', 'ignore_ament_install']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'ignore'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'ignore_ament_install'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extensions ['colcon_pkg']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'colcon_pkg'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extensions ['colcon_meta']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'colcon_meta'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extensions ['ros']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'ros'
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extensions ['cmake', 'python']
+[0.174s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'cmake'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/YDLidar-SDK) by extension 'python'
+[0.191s] DEBUG:colcon.colcon_core.package_identification:Package 'src/YDLidar-SDK' with type 'cmake' and name 'ydlidar_sdk'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extension 'ignore'
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extension 'ignore_ament_install'
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extensions ['colcon_pkg']
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extension 'colcon_pkg'
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extensions ['colcon_meta']
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extension 'colcon_meta'
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extensions ['ros']
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/actions_cpp) by extension 'ros'
+[0.194s] DEBUG:colcon.colcon_core.package_identification:Package 'src/actions_cpp' with type 'ros.ament_cmake' and name 'actions_cpp'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extension 'ignore'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extension 'ignore_ament_install'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extensions ['colcon_pkg']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extension 'colcon_pkg'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extensions ['colcon_meta']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extension 'colcon_meta'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extensions ['ros']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_cpp_pkg) by extension 'ros'
+[0.195s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_cpp_pkg' with type 'ros.ament_cmake' and name 'my_cpp_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_py_pkg) by extension 'ros'
+[0.196s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_py_pkg' with type 'ros.ament_python' and name 'my_py_pkg'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'ignore'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'ignore_ament_install'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['colcon_pkg']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'colcon_pkg'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['colcon_meta']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'colcon_meta'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extensions ['ros']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_bringup) by extension 'ros'
+[0.197s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_bringup' with type 'ros.ament_cmake' and name 'my_robot_bringup'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'ignore'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'ignore_ament_install'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['colcon_pkg']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'colcon_pkg'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['colcon_meta']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'colcon_meta'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extensions ['ros']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_description) by extension 'ros'
+[0.197s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_description' with type 'ros.ament_cmake' and name 'my_robot_description'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ignore'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ignore_ament_install'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['colcon_pkg']
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'colcon_pkg'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['colcon_meta']
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'colcon_meta'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['ros']
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ros'
+[0.198s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_interfaces' with type 'ros.ament_cmake' and name 'my_robot_interfaces'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extensions ['ignore', 'ignore_ament_install']
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extension 'ignore'
+[0.198s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extension 'ignore_ament_install'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extensions ['colcon_pkg']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extension 'colcon_pkg'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extensions ['colcon_meta']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extension 'colcon_meta'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extensions ['ros']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial) by extension 'ros'
+[0.199s] DEBUG:colcon.colcon_core.package_identification:Package 'src/serial' with type 'ros.catkin' and name 'serial'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'ignore'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'ignore_ament_install'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['colcon_pkg']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'colcon_pkg'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['colcon_meta']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'colcon_meta'
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['ros']
+[0.199s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'ros'
+[0.200s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ydlidar_ros2_driver' with type 'ros.ament_cmake' and name 'ydlidar_ros2_driver'
+[0.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'my_robot_bringup' in 'src/my_robot_bringup'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'my_robot_description' in 'src/my_robot_description'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'my_robot_interfaces' in 'src/my_robot_interfaces'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'serial' in 'src/serial'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ydlidar_ros2_driver' in 'src/ydlidar_ros2_driver'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ydlidar_sdk' in 'src/YDLidar-SDK'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'actions_cpp' in 'src/actions_cpp'
+[0.217s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'my_py_pkg' in 'src/my_py_pkg'
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.219s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/dpma/projects/DiffDrive-ROS/ros_ws/install
+[0.221s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 405 installed packages in /opt/ros/jazzy
+[0.222s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.277s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'cmake_args' from command line to 'None'
+[0.277s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'cmake_target' from command line to 'None'
+[0.277s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.277s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'cmake_clean_cache' from command line to 'True'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'my_cpp_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.278s] DEBUG:colcon.colcon_core.verb:Building package 'my_cpp_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg', 'merge_install': False, 'path': '/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_cpp_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.278s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.279s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.279s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_cpp_pkg' with build type 'ament_cmake'
+[0.279s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_cpp_pkg'
+[0.281s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.281s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.281s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.293s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_description:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/dpma/acados/interfaces/acados_template /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg
+[2.362s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_description:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/dpma/acados/interfaces/acados_template /usr/bin/cmake /home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg
+[2.362s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_description:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/dpma/acados/interfaces/acados_template /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg -- -j8 -l8
+[2.706s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_cpp_pkg)
+[2.706s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg' returned '2': CMAKE_PREFIX_PATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_sdk:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/ydlidar_ros2_driver:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/actions_cpp:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_description:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_robot_interfaces/lib/python3.12/site-packages:/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages:/home/dpma/acados/interfaces/acados_template /usr/bin/cmake --build /home/dpma/projects/DiffDrive-ROS/ros_ws/build/my_cpp_pkg -- -j8 -l8
+[2.708s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg' for CMake module files
+[2.708s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg' for CMake config files
+[2.709s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_cpp_pkg', 'cmake_prefix_path')
+[2.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/hook/cmake_prefix_path.ps1'
+[2.709s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/hook/cmake_prefix_path.dsv'
+[2.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/hook/cmake_prefix_path.sh'
+[2.710s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib'
+[2.710s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/bin'
+[2.710s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib/pkgconfig/my_cpp_pkg.pc'
+[2.711s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/lib/python3.12/site-packages'
+[2.711s] Level 1:colcon.colcon_core.environment:checking '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/bin'
+[2.711s] INFO:colcon.colcon_core.shell:Creating package script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.ps1'
+[2.711s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.dsv'
+[2.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.sh'
+[2.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.bash'
+[2.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.zsh'
+[2.714s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dpma/projects/DiffDrive-ROS/ros_ws/install/my_cpp_pkg/share/colcon-core/packages/my_cpp_pkg)
+[2.724s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.724s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.724s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[2.724s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.730s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.730s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.730s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.744s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.744s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/local_setup.ps1'
+[2.745s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/_local_setup_util_ps1.py'
+[2.746s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/setup.ps1'
+[2.747s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/local_setup.sh'
+[2.748s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/_local_setup_util_sh.py'
+[2.749s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/setup.sh'
+[2.750s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/local_setup.bash'
+[2.750s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/setup.bash'
+[2.752s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/local_setup.zsh'
+[2.752s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dpma/projects/DiffDrive-ROS/ros_ws/install/setup.zsh'
