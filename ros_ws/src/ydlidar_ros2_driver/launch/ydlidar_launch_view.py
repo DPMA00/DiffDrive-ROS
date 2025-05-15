@@ -36,7 +36,7 @@ def generate_launch_description():
                                                share_dir, 'params', 'TminiPro.yaml'),
                                            description='FPath to the ROS2 parameters file to use.')
 
-    driver_node = Node(package='ydlidar_ros2_driver',
+    driver_node = LifecycleNode(package='ydlidar_ros2_driver',
                                 executable='ydlidar_ros2_driver_node',
                                 name='ydlidar_ros2_driver_node',
                                 output='screen',

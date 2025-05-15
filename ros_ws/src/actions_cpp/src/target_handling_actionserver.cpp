@@ -3,7 +3,7 @@
 #include <nav_msgs/msg/odometry.hpp>
 #include <geometry_msgs/msg/vector3.hpp>
 #include <my_robot_interfaces/action/move_to.hpp>
-#include <algorithm>
+#include <queue>
 #include <cmath>
 
 using MoveTo = my_robot_interfaces::action::MoveTo;
@@ -15,6 +15,7 @@ class TargetHandlingServer : public rclcpp::Node
     public:
     TargetHandlingServer() : Node("target_handling_actionserver")
     {
+        goal_queue_thread = std::thread(&TargetHandlingServer::run_goal_queue_thread, this);
         target_publisher = this->create_publisher<geometry_msgs::msg::Vector3>("diffdrive/target_pos",10);
         odom_subscriber = this->create_subscription<nav_msgs::msg::Odometry>("diffdrive/odometry",
             10, std::bind(&TargetHandlingServer::OdometryCallback, this, std::placeholders::_1));
@@ -31,6 +32,11 @@ class TargetHandlingServer : public rclcpp::Node
         RCLCPP_INFO(this->get_logger(), "Target handling server started");
     }
 
+    ~TargetHandlingServer() //destructor
+    {
+        goal_queue_thread.join();
+    }
+
     private:
 
     double current_x {0};
@@ -39,8 +45,9 @@ class TargetHandlingServer : public rclcpp::Node
 
     rclcpp_action::GoalResponse goal_callback(const rclcpp_action::GoalUUID &uuid, std::shared_ptr<const MoveTo::Goal> goal)
     {
-        (void)uuid;
-        (void)goal;
+        RCLCPP_INFO(this->get_logger(), "Received a goal");
+
+        RCLCPP_INFO(this->get_logger(), "Accepting the goal");
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
@@ -50,9 +57,36 @@ class TargetHandlingServer : public rclcpp::Node
         return rclcpp_action::CancelResponse::ACCEPT;
     }
 
+    void run_goal_queue_thread()
+    {
+        rclcpp::Rate loop_rate(1000.0);
+
+        while (rclcpp::ok())
+        {
+            std::shared_ptr<TargetHandlingGoalHandle> next_goal;
+            {
+                std::lock_guard<std::mutex> lock(mutex_);
+                if (goal_queue.size() > 0)
+                {
+                    next_goal = goal_queue.front();
+                    goal_queue.pop();
+                }
+            }
+
+            if (next_goal)
+            {
+                execute_goal(next_goal);
+            }
+            loop_rate.sleep();
+        }
+    }
+
     void handle_accepted_callback(const std::shared_ptr<TargetHandlingGoalHandle> goal_handle)
     {
-        execute_goal(goal_handle);
+        std::lock_guard<std::mutex> lock(mutex_);
+        goal_queue.push(goal_handle);
+        RCLCPP_INFO(this->get_logger(), "Add goal to queue");
+        RCLCPP_INFO(this->get_logger(), "Queue size: %d", (int)goal_queue.size());
     }
 
     void execute_goal(const std::shared_ptr<TargetHandlingGoalHandle> goal_handle)
@@ -60,12 +94,14 @@ class TargetHandlingServer : public rclcpp::Node
         // Get request from goal
         auto target_x = goal_handle->get_goal()->x;
         auto target_y = goal_handle->get_goal()->y;
+        auto target_theta = goal_handle->get_goal()->theta;
 
-        publish_target_data(target_x, target_y);
+        publish_target_data(target_x, target_y, target_theta);
         auto result = std::make_shared<MoveTo::Result>();
         double pos_error = sqrt(pow((target_x-current_x), 2) + pow((target_y-current_y), 2));
+        double angle_error = abs(target_theta-current_theta);
                 
-        if (pos_error <=0.05)
+        if (pos_error <=0.05 && angle_error<=1)
         {
             result->end_x = current_x;
             result->end_y = current_y;
@@ -84,11 +120,12 @@ class TargetHandlingServer : public rclcpp::Node
 
     }
 
-    void publish_target_data(double target_x, double target_y)
+    void publish_target_data(double target_x, double target_y, double target_theta)
     {
         auto target_data = geometry_msgs::msg::Vector3();
         target_data.x = target_x;
         target_data.y = target_y;
+        target_data.y = target_theta;
 
         target_publisher->publish(target_data);
     }
@@ -104,6 +141,9 @@ class TargetHandlingServer : public rclcpp::Node
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_subscriber;
     rclcpp_action::Server<MoveTo>::SharedPtr target_handling_server;
     rclcpp::Publisher<geometry_msgs::msg::Vector3>::SharedPtr target_publisher;
+    std::mutex mutex_;
+    std::queue<std::shared_ptr<TargetHandlingGoalHandle>> goal_queue;
+    std::thread goal_queue_thread;
 };
 
 int main(int argc, char **argv)

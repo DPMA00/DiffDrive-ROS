@@ -11,6 +11,8 @@ find_package(std_msgs REQUIRED)
 find_package(my_robot_interfaces REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 
 include_directories(
@@ -38,9 +40,20 @@ ament_target_dependencies(arduino_bridge_node
 )
 
 
+add_executable(odometry_node src/odometry_node.cpp)
+ament_target_dependencies(odometry_node
+                          rclcpp
+                          nav_msgs
+                          geometry_msgs
+                          tf2
+                          tf2_ros
+                          my_robot_interfaces
+                          )
+
 install(TARGETS 
   arduino_bridge_node
   pid_diffdrive_control
+  odometry_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

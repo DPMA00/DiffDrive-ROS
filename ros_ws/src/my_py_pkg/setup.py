@@ -20,7 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'mpc_diffdrive_controller_node = my_py_pkg.mpc_diffdrive_control:main'
+            'mpc_diffdrive_controller_node = my_py_pkg.mpc_diffdrive_control:main',
+            'mpcc_diffdrive_controller_node = my_py_pkg.mpcc_diffdrive_control:main',
+            'keyboard_control_node = my_py_pkg.keyboard_control_node:main'
         ],
     },
 )

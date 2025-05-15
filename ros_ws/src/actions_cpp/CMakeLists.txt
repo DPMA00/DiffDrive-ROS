@@ -22,8 +22,18 @@ ament_target_dependencies(target_handling_actionserver
                           geometry_msgs)
 
 
+add_executable(target_handling_actionclient src/target_handling_actionclient.cpp)
+ament_target_dependencies(target_handling_actionclient
+                      rclcpp
+                      rclcpp_action
+                      my_robot_interfaces
+                      nav_msgs
+                      geometry_msgs)
+
+
 install(TARGETS
       target_handling_actionserver
+      target_handling_actionclient
         DESTINATION lib/${PROJECT_NAME}/
         )
 

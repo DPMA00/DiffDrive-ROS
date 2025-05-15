@@ -19,7 +19,7 @@ class ArduinoBridge : public rclcpp::Node{
         
         try {
             serial_.setPort("/dev/ttyACM0");
-            serial_.setBaudrate(115200);
+            serial_.setBaudrate(57600);
             serial::Timeout to = serial::Timeout::simpleTimeout(100);
             serial_.setTimeout(to);
             serial_.open();
@@ -56,6 +56,13 @@ class ArduinoBridge : public rclcpp::Node{
                     RCLCPP_WARN(this->get_logger(), "Serial read error: %s", e.what());
                     return;
                 }
+
+                if (line.empty() || line[0] != '$')
+                {
+                    return;
+                }
+                line.erase(0,1);
+                
                 std::istringstream iss(line);
 
                 long val1, val2;

@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Vector3
 from acados_template import AcadosOcp, AcadosOcpSolver
-from my_py_pkg.diffdrivemodel import export_diffdrive_model
+from my_py_pkg.diffdrive_aug_model import export_diffdrive_model
 from nav_msgs.msg import Odometry
 from my_robot_interfaces.msg import MotorOdomInfo
 from my_robot_interfaces.msg import CmdDriveVel
@@ -12,22 +12,21 @@ from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
 import numpy as np
 import casadi as ca
+from my_py_pkg.track import Track
 
 
-
-class MPCDiffDriveController(Node):
+class MPCCDiffDriveController(Node):
     def __init__(self):
-        super().__init__("mpc_diffdrive_controller_node")
+        super().__init__("mpcc_diffdrive_controller_node")
         self.tf_broadcaster = TransformBroadcaster(self)
         self.horizon_publisher = self.create_publisher(Path, "diffdrive/prediction_horizon", 10)
         self.odom_info_subscription = self.create_subscription(MotorOdomInfo, "arduino/motor_odom_info", self.MotorOdomCallback, 10)
         self.velocity_publisher = self.create_publisher(CmdDriveVel, "arduino/cmd_vel",10)
         self.odometry_publisher = self.create_publisher(Odometry,"diffdrive/odometry",10)
-        self.target_subscriber = self.create_subscription(Vector3, "diffdrive/target_pos", self.TargetPosCallback,10)
 
-        self.timer = self.create_timer(2/20, self.mpc_loop)
-        
-        self.current_state = np.array([0.0, 0.0, 0.0])
+        self.timer = self.create_timer(2/25, self.mpc_loop)
+        self.next_theta = 0.0
+        self.current_state = np.array([0.0, 0.0, 0.0,self.next_theta])
         self.wheel_radius = 0.05
         self.wheel_base = 0.29
 
@@ -41,81 +40,107 @@ class MPCDiffDriveController(Node):
         self.obstacle_R = 0.15
         self.safety_R = 0.25
 
-        self.target = np.array([0.0,0.0,0.0])
+        self.state_history = []
+        self.control_history = []
+        self.prediction_history = []
+    
+        self.ocp_solver, self.track= self.setup(N=25, tf=2.0)
+        self.tracklength = self.track.L
 
-        self.pose_error = 0
-        self.heading_error = 0
-        self.setup_solver()
 
 
-    def setup_solver(self):
-        self.ocp = AcadosOcp()
+
+    def setup(self,N, tf):
+        ocp = AcadosOcp()
         model = export_diffdrive_model()
-        self.ocp.model = model
-        self.ocp.solver_options.tf = 2
-        self.ocp.solver_options.N_horizon = 20
-        Q = np.diag([2000, 2000, 2000])
-        R = np.diag([1, 1])
-        Q_avoid = np.diag([1])
+        ocp.model = model
+        ocp.solver_options.tf = tf
+        ocp.solver_options.N_horizon = N
 
-        Q_e = np.diag([5000, 5000, 5000])
+        q_c = 1e4
+        q_l = 3e4
+        q_theta = 1e2
+        q_psi = 3e3
 
-        x = self.ocp.model.x[0]
-        y = self.ocp.model.x[1]
+        R_v = 1
+        R_omega = 1
+        R_var = 1
+        
+        x = ocp.model.x[0]
+        y = ocp.model.x[1]
+        psi = ocp.model.x[2]
+        theta=ocp.model.x[3]
 
-        self.h_expr = (self.obstacle_R+self.safety_R)**2 - ((x - self.obstacle[0])**2 +  (y-self.obstacle[1])**2)
-        self.ocp.model.con_h_expr = self.h_expr
+        u = ocp.model.u
 
-        dist_sq =  ((x - self.obstacle[0])**2 +  (y-self.obstacle[1])**2)
-        self.avoidance_cost = 10/(dist_sq + 1e-2)
+        track = Track(data='/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_py_pkg/my_py_pkg/track_points.csv')
+        x_full, y_full,theta_full = track.create_grid(density=1000)
 
-        self.ocp.cost.cost_type = 'NONLINEAR_LS'
-        #self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u)
-        self.ocp.cost.yref = np.array([self.target[0], self.target[1], self.target[2], 0, 0, 0])
-        self.ocp.model.cost_y_expr = ca.vertcat(model.x, model.u, self.avoidance_cost) 
-        self.ocp.cost.W = ca.diagcat(Q, R, Q_avoid).full()
-        self.ocp.cost.cost_type_e = 'NONLINEAR_LS'
-        self.ocp.cost.yref_e = self.target
-        self.ocp.model.cost_y_expr_e = model.x
-        self.ocp.cost.W_e = Q
+        x_lin = ca.interpolant('x', 'linear', [theta_full], x_full)
+        y_lin = ca.interpolant('y', 'linear', [theta_full], y_full)
 
-        v_max = 0.5; omega_max = 7
-        self.ocp.constraints.lbu = np.array([-v_max, -omega_max])
-        self.ocp.constraints.ubu = np.array([v_max, omega_max])
-        self.ocp.constraints.idxbu = np.array([0, 1])
-        self.ocp.constraints.x0 = self.current_state
+        x_ref = x_lin(theta)                
+        y_ref = y_lin(theta)
 
-        self.ocp.constraints.uh = np.array([0.0])
-        self.ocp.constraints.lh = np.array([-20000])
+        dx_dtheta = ca.gradient(x_ref, theta)   
+        dy_dtheta = ca.gradient(y_ref, theta)
+        phi = ca.atan2(dy_dtheta, dx_dtheta)
 
-        self.ocp.solver_options.qp_solver = 'PARTIAL_CONDENSING_HPIPM'
-        self.ocp.solver_options.hessian_approx = 'EXACT'
-        self.ocp.solver_options.integrator_type = 'ERK'
-        self.ocp.solver_options.print_level = 0
-        self.ocp.solver_options.nlp_solver_type = 'SQP_RTI'
-        self.ocp_solver = AcadosOcpSolver(self.ocp)
+        
+
+
+        e_c = ca.sin(phi)*(x-x_ref) - ca.cos(phi)*(y-y_ref)
+        e_l = -ca.cos(phi)*(x-x_ref) - ca.sin(phi)*(y-y_ref)
+        heading_cost = q_psi * (psi-phi)**2
+        ocp.model.cost_expr_ext_cost = (q_c * e_c**2 + q_l * e_l**2 + u[0]**2*R_v + u[1]**2*R_omega + u[2]**2*R_var - q_theta * theta) + heading_cost
+
+        ocp.cost.cost_type = 'EXTERNAL'
+        v_max = 1
+        omega_max = 5
+
+        ocp.constraints.lbu = np.array([-v_max/2, -omega_max, 0])
+        ocp.constraints.ubu = np.array([v_max, omega_max, 1.0])
+        ocp.constraints.idxbu = np.array([0, 1,2])
+
+        
+        ocp.constraints.x0 =  self.current_state
+
+        ocp.constraints.constr_type = 'BGH'
+        ocp.constraints.constr_type_0 = 'BGH'
+        ocp.constraints.constr_type_e = 'BGH'
+
+        ocp.solver_options.qp_solver = 'PARTIAL_CONDENSING_HPIPM'
+        ocp.solver_options.hessian_approx = 'EXACT'
+        ocp.solver_options.integrator_type = 'ERK'
+        ocp.solver_options.print_level = 0
+        ocp.solver_options.nlp_solver_type = 'SQP_RTI'
+        
+        
+        ocp_solver = AcadosOcpSolver(ocp)
+
+        
+
+        return ocp_solver, track
 
     def mpc_loop(self):
-        
-        for i in range(self.ocp.solver_options.N_horizon):
-            self.ocp_solver.set(i, "yref", np.array([self.target[0], self.target[1], self.target[2], 0, 0, 0]))
-        
-        self.ocp_solver.set(self.ocp.solver_options.N_horizon,"yref",self.target)
-        
         self.ocp_solver.set(0,"lbx", self.current_state)
         self.ocp_solver.set(0,"ubx", self.current_state)
 
-        if self.pose_error >= 0.05 or abs(self.heading_error) >= np.deg2rad(1):
+        if self.next_theta  < 2*self.tracklength:
             status = self.ocp_solver.solve()
             if status !=0:
                 self.get_logger().error("Solver failed with status: %d" % status)
                 return
-            controls = self.ocp_solver.get(0,"u")
+            v, w, var = self.ocp_solver.get(0,"u")
+            controls = np.array([v,w])
         else:
+            self.get_logger().warn(f'Theta: {self.next_theta:.3f}, Tracklength: {self.tracklength:.3f}')
             controls = np.array([0.0,0.0])
         
 
-        self.get_logger().info(f"MPC controls: v={controls[0]:.3f}, omega={controls[1]:.3f}")
+        self.get_logger().info(f"MPC controls: v={controls[0]:.3f}, omega={controls[1]:.3f}, theta= {self.next_theta:.3f}")
+        self.state_history.append(self.current_state)
+        self.control_history.append(controls)
         self.publishPredictionHorizon()
         self.publishVelocity(controls)
 
@@ -140,15 +165,13 @@ class MPCDiffDriveController(Node):
         self.current_state[0] += delta_x
         self.current_state[1] += delta_y
         self.current_state[2] = np.atan2(np.sin(self.current_state[2]),np.cos(self.current_state[2]))
+        self.next_theta = self.track.project(self.current_state[0], self.current_state[1])
+        
+        
+        self.current_state[3] = self.next_theta
 
         self.publishOdometry()
         self.publishTF()
-
-        self.pose_error = np.linalg.norm(self.target[0:2]-self.current_state[0:2])
-        self.heading_error = self.target[2]- self.current_state[2]
-
-        self.get_logger().info(f"heading error: {self.heading_error} rads, {np.rad2deg(self.heading_error)} degrees")
-        self.get_logger().info(f"x: {self.current_state[0]:.3f}, y: {self.current_state[1]:.3f}, theta:  {np.rad2deg(self.current_state[2]):.3f}")
 
    
     def publishVelocity(self, controls):
@@ -183,10 +206,6 @@ class MPCDiffDriveController(Node):
         self.R_enc = msg.right_encoder
         self.calcOdometry()
 
-    def TargetPosCallback(self, msg):
-        self.target[0] = msg.x
-        self.target[1] = msg.y
-        self.target[2] = msg.z
     
     def publishTF(self):
         t = TransformStamped()
@@ -209,14 +228,14 @@ class MPCDiffDriveController(Node):
 
     def publishPredictionHorizon(self):
         trajectory = []
-        for i in range(self.ocp.solver_options.N_horizon + 1):
+        for i in range(self.ocp_solver.acados_ocp.solver_options.N_horizon + 1):
             trajectory.append(self.ocp_solver.get(i, "x"))
         prediction = Path()
         
         prediction.header.stamp = self.get_clock().now().to_msg()
         prediction.header.frame_id = "odom" 
 
-        for (x, y, yaw) in trajectory:
+        for (x, y, yaw, progress) in trajectory:
             pose_stamped = PoseStamped()
             
             pose_stamped.header.stamp = prediction.header.stamp
@@ -238,13 +257,39 @@ class MPCDiffDriveController(Node):
         self.horizon_publisher.publish(prediction)
 
 
+    def create_logs(self):
+        import pandas as pd
+        
+
+        states = np.vstack(self.state_history)
+        ctrls = np.vstack(self.control_history)
+
+        DF = pd.DataFrame({
+            "x": states[:,0],
+            "y": states[:,1],
+            "psi": states[:,2],
+            "theta": states[:,3],
+            "v": ctrls[:,0],
+            "w": ctrls[:,1],
+        })
+
+        DF.to_csv('/tmp/data.csv', index=False)
+        
+    
+
         
         
 def main(args=None):
     rclpy.init(args=args)
-    node = MPCDiffDriveController()
-    rclpy.spin(node)
-    rclpy.shutdown()
+    node = MPCCDiffDriveController()
+    rclpy.get_default_context().on_shutdown(node.create_logs)
+
+    try:
+        rclpy.spin(node)
+    finally:
+        node.create_logs()
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == "__main__":
     main()
