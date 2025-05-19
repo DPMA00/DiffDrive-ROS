@@ -10,25 +10,35 @@ def export_diffdrive_model():
     x1 = SX.sym('x1')
     y1 = SX.sym('y1')
     theta = SX.sym('theta')
-
-    x = vertcat(x1,y1,theta)
-
     v = SX.sym('v')
     omega = SX.sym('omega')
+    
+    x = vertcat(x1, y1,theta, v, omega)
+    
 
-    u = vertcat(v,omega)
+    a = SX.sym('a')
+    alpha = SX.sym('alpha')
+    
+    u = vertcat(a, alpha)
 
     x1_dot = SX.sym('x_dot')
     y1_dot = SX.sym('y_dot')
     theta_dot = SX.sym('theta_dot')
+    v_dot = SX.sym('v_dot')
+    omega_dot = SX.sym('omega_dot')
+    
     
     x_dot = vertcat(x1_dot,
                     y1_dot,
-                    theta_dot)
+                    theta_dot,
+                    v_dot,
+                    omega_dot)
     
     f_expl = vertcat(v*cos(theta),
                      v*sin(theta),
-                     -omega)
+                     omega,
+                     a,
+                     alpha)
 
     f_impl = x_dot - f_expl
 

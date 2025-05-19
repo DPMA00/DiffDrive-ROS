@@ -13,7 +13,7 @@ find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
-
+find_package(example_interfaces REQUIRED)
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/../serial/include
@@ -37,6 +37,7 @@ target_link_libraries(arduino_bridge_node serial)
 ament_target_dependencies(arduino_bridge_node
   rclcpp
   my_robot_interfaces
+  example_interfaces
 )
 
 

@@ -31,7 +31,7 @@ def export_diffdrive_model():
     
     f_expl = ca.vertcat(v*ca.cos(psi),
                      v*ca.sin(psi),
-                     -omega,
+                     omega,
                      var)
 
     f_impl = x_dot - f_expl

@@ -67,12 +67,6 @@ private:
 
     void calcOdometry()
     {
-        rclcpp::Time now = this->get_clock()->now();
-        double dt = (now-prev_time).seconds();
-        prev_time = now;
-
-        if (dt <= 1e-5) return;
-
         int delta_L_encoder;
         int delta_R_encoder;
         
@@ -92,8 +86,10 @@ private:
         
         ori_z += delta_theta;
 
-        linear_velocity = d_avg/dt;
-        angular_velocity = delta_theta/dt;
+        double L_radps = L_rpm * (2 * PI / 60.0);
+        double R_radps = R_rpm * (2 * PI / 60.0);
+        linear_velocity = -1*(wheel_radius/2 * (L_radps + R_radps));
+        angular_velocity = -1*(wheel_radius/wheel_base * (R_radps - L_radps));
 
         double delta_x = d_avg * cos(ori_z);
         double delta_y = d_avg * sin(ori_z);

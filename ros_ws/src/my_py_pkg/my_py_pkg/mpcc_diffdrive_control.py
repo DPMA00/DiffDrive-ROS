@@ -13,18 +13,17 @@ from geometry_msgs.msg import PoseStamped
 import numpy as np
 import casadi as ca
 from my_py_pkg.track import Track
-
+import tf_transformations
 
 class MPCCDiffDriveController(Node):
     def __init__(self):
         super().__init__("mpcc_diffdrive_controller_node")
-        self.tf_broadcaster = TransformBroadcaster(self)
         self.horizon_publisher = self.create_publisher(Path, "diffdrive/prediction_horizon", 10)
-        self.odom_info_subscription = self.create_subscription(MotorOdomInfo, "arduino/motor_odom_info", self.MotorOdomCallback, 10)
+        self.odom_subscription = self.create_subscription(Odometry, "odom", self.OdomCallback, 10)
         self.velocity_publisher = self.create_publisher(CmdDriveVel, "arduino/cmd_vel",10)
-        self.odometry_publisher = self.create_publisher(Odometry,"diffdrive/odometry",10)
 
-        self.timer = self.create_timer(2/25, self.mpc_loop)
+
+        self.timer = self.create_timer(2/30, self.mpc_loop)
         self.next_theta = 0.0
         self.current_state = np.array([0.0, 0.0, 0.0,self.next_theta])
         self.wheel_radius = 0.05
@@ -44,7 +43,7 @@ class MPCCDiffDriveController(Node):
         self.control_history = []
         self.prediction_history = []
     
-        self.ocp_solver, self.track= self.setup(N=25, tf=2.0)
+        self.ocp_solver, self.track= self.setup(N=30, tf=2.0)
         self.tracklength = self.track.L
 
 
@@ -58,12 +57,12 @@ class MPCCDiffDriveController(Node):
         ocp.solver_options.N_horizon = N
 
         q_c = 1e4
-        q_l = 3e4
-        q_theta = 1e2
-        q_psi = 3e3
+        q_l = 2e4
+        q_theta = 5e3
+        q_psi = 1e3
 
         R_v = 1
-        R_omega = 1
+        R_omega = 100
         R_var = 1
         
         x = ocp.model.x[0]
@@ -73,7 +72,7 @@ class MPCCDiffDriveController(Node):
 
         u = ocp.model.u
 
-        track = Track(data='/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_py_pkg/my_py_pkg/track_points.csv')
+        track = Track(data='/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_py_pkg/my_py_pkg/track_points2.csv')
         x_full, y_full,theta_full = track.create_grid(density=1000)
 
         x_lin = ca.interpolant('x', 'linear', [theta_full], x_full)
@@ -91,12 +90,15 @@ class MPCCDiffDriveController(Node):
 
         e_c = ca.sin(phi)*(x-x_ref) - ca.cos(phi)*(y-y_ref)
         e_l = -ca.cos(phi)*(x-x_ref) - ca.sin(phi)*(y-y_ref)
-        heading_cost = q_psi * (psi-phi)**2
+        
+        heading_error = psi-phi
+        heading_error = ca.atan2(ca.sin(heading_error), ca.cos(heading_error))
+        heading_cost = q_psi * (heading_error)**2
         ocp.model.cost_expr_ext_cost = (q_c * e_c**2 + q_l * e_l**2 + u[0]**2*R_v + u[1]**2*R_omega + u[2]**2*R_var - q_theta * theta) + heading_cost
 
         ocp.cost.cost_type = 'EXTERNAL'
-        v_max = 1
-        omega_max = 5
+        v_max = 0.7
+        omega_max = 4
 
         ocp.constraints.lbu = np.array([-v_max/2, -omega_max, 0])
         ocp.constraints.ubu = np.array([v_max, omega_max, 1.0])
@@ -109,8 +111,8 @@ class MPCCDiffDriveController(Node):
         ocp.constraints.constr_type_0 = 'BGH'
         ocp.constraints.constr_type_e = 'BGH'
 
-        ocp.solver_options.qp_solver = 'PARTIAL_CONDENSING_HPIPM'
-        ocp.solver_options.hessian_approx = 'EXACT'
+        ocp.solver_options.qp_solver = 'FULL_CONDENSING_HPIPM'
+        ocp.solver_options.hessian_approx = 'GAUSS_NEWTON'
         ocp.solver_options.integrator_type = 'ERK'
         ocp.solver_options.print_level = 0
         ocp.solver_options.nlp_solver_type = 'SQP_RTI'
@@ -144,34 +146,6 @@ class MPCCDiffDriveController(Node):
         self.publishPredictionHorizon()
         self.publishVelocity(controls)
 
-    def calcOdometry(self):
-        delta_L_encoder = -(self.L_enc-self.prev_L_enc)
-        delta_R_encoder = -(self.R_enc-self.prev_R_enc)
-
-        self.prev_L_enc = self.L_enc
-        self.prev_R_enc = self.R_enc
-
-        d_left = self.wheel_radius*delta_L_encoder * 2*np.pi/360
-        d_right = self.wheel_radius*delta_R_encoder * 2*np.pi/360
-
-        d_avg = (d_left + d_right)/2
-        delta_theta = (d_right-d_left)/self.wheel_base
-
-        self.current_state[2] += delta_theta
-
-        delta_x = d_avg * np.cos(self.current_state[2])
-        delta_y = d_avg * np.sin(self.current_state[2])
-        
-        self.current_state[0] += delta_x
-        self.current_state[1] += delta_y
-        self.current_state[2] = np.atan2(np.sin(self.current_state[2]),np.cos(self.current_state[2]))
-        self.next_theta = self.track.project(self.current_state[0], self.current_state[1])
-        
-        
-        self.current_state[3] = self.next_theta
-
-        self.publishOdometry()
-        self.publishTF()
 
    
     def publishVelocity(self, controls):
@@ -182,49 +156,25 @@ class MPCCDiffDriveController(Node):
 
         self.velocity_publisher.publish(msg)
 
-    def publishOdometry(self):
-        odom_msg = Odometry()
-        odom_msg.pose.pose.position.x = self.current_state[0]
-        odom_msg.pose.pose.position.y = self.current_state[1]
-        odom_msg.pose.pose.position.z = 0.0  
-
-        yaw = self.current_state[2]
-        qx = 0.0
-        qy = 0.0
-        qz = np.sin(yaw / 2.0)
-        qw = np.cos(yaw / 2.0)
-        odom_msg.pose.pose.orientation.x = qx
-        odom_msg.pose.pose.orientation.y = qy
-        odom_msg.pose.pose.orientation.z = qz
-        odom_msg.pose.pose.orientation.w = qw
-
-
-        self.odometry_publisher.publish(odom_msg)
     
-    def MotorOdomCallback(self, msg):
-        self.L_enc = msg.left_encoder
-        self.R_enc = msg.right_encoder
-        self.calcOdometry()
+    def OdomCallback(self, msg: Odometry):
+        self.current_state[0] = msg.pose.pose.position.x
+        self.current_state[1] = msg.pose.pose.position.y
+        
+        orientation_q = msg.pose.pose.orientation
+        quaternion = (orientation_q.x,
+                      orientation_q.y,
+                      orientation_q.z,
+                      orientation_q._w)
 
-    
-    def publishTF(self):
-        t = TransformStamped()
-        t.header.stamp = self.get_clock().now().to_msg()
-        t.header.frame_id = "odom"            
-        t.child_frame_id = "base_footprint"
+        (_,_,yaw) = tf_transformations.euler_from_quaternion(quaternion)
         
-        t.transform.translation.x = self.current_state[0]
-        t.transform.translation.y = self.current_state[1]
-        t.transform.translation.z = 0.0
+        self.current_state[2] = yaw
         
-        yaw = self.current_state[2]
+        self.current_state[3] = self.track.project(self.current_state[0], self.current_state[1])
 
-        t.transform.rotation.x = 0.0
-        t.transform.rotation.y = 0.0
-        t.transform.rotation.z = np.sin(yaw / 2.0)
-        t.transform.rotation.w = np.cos(yaw / 2.0)
-        
-        self.tf_broadcaster.sendTransform(t)
+        self.get_logger().info(f"x: {self.current_state[0]:.3f}, y: {self.current_state[1]:.3f}, theta:  {np.rad2deg(self.current_state[2]):.3f}")
+
 
     def publishPredictionHorizon(self):
         trajectory = []
