@@ -1,0 +1,5 @@
+float32 motor_right_current
+float32 motor_left_current
+float32 battery_voltage
+float32 battery_power
+float32 env_temperature

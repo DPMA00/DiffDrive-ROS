@@ -1,6 +1,6 @@
 <launch>
 
-    <node pkg="my_cpp_pkg" exec="arduino_bridge_node" />
+    <node pkg="my_cpp_pkg" exec="mcu_bridge_node" />
     <node pkg="my_py_pkg" exec="mpc_diffdrive_controller_node" />
 
     <let name="urdf_path" 

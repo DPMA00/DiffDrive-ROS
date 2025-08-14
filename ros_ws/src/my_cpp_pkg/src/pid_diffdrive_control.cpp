@@ -19,9 +19,9 @@ public:
     DiffDriveControllerNode() : Node("pid_diffdrivedrive_control")
     {
         odom_info_subscription = this->create_subscription<my_robot_interfaces::msg::MotorOdomInfo>(
-            "arduino/motor_odom_info", 10, std::bind(&DiffDriveControllerNode::MotorOdomInfoCallback, this, std::placeholders::_1));
+            "motor_odom_info", 10, std::bind(&DiffDriveControllerNode::MotorOdomInfoCallback, this, std::placeholders::_1));
 
-        velocity_publisher = this->create_publisher<my_robot_interfaces::msg::CmdDriveVel>("arduino/cmd_vel", 10);
+        velocity_publisher = this->create_publisher<my_robot_interfaces::msg::CmdDriveVel>("cmd_vel", 10);
 
         odometry_publisher = this->create_publisher<nav_msgs::msg::Odometry>("diffdrive/odometry", 10);
 

@@ -13,16 +13,16 @@
 using namespace std::chrono_literals;
 
 constexpr double PI = 3.14159265358979323846;
-
+constexpr double TICKS_PER_REV= 360.0;
 
 class OdometryNode : public rclcpp::Node
 {
 public: OdometryNode() : Node("odometry_node")
     {
         odom_info_subscriber= this->create_subscription<my_robot_interfaces::msg::MotorOdomInfo>(
-            "arduino/motor_odom_info", 10, std::bind(&OdometryNode::MotorOdomInfoCallback, this, std::placeholders::_1));
+            "motor_odom_info", 10, std::bind(&OdometryNode::MotorOdomInfoCallback, this, std::placeholders::_1));
 
-        odometry_publisher = this->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
+        odometry_publisher = this->create_publisher<nav_msgs::msg::Odometry>("robot/odom", 10);
 
         tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
@@ -69,15 +69,17 @@ private:
     {
         int delta_L_encoder;
         int delta_R_encoder;
-        
+        auto current_time = this->get_clock()->now();
+        double dt = (current_time-prev_time).seconds();
+        prev_time = current_time;
         delta_L_encoder = -(L_enc_pos-prev_L_enc_pos);
         delta_R_encoder = -(R_enc_pos-prev_R_enc_pos);
 
         prev_L_enc_pos = L_enc_pos;
         prev_R_enc_pos = R_enc_pos;
 
-        double d_left = wheel_radius*delta_L_encoder * (2*PI/360);
-        double d_right = wheel_radius*delta_R_encoder * (2*PI/360);
+        double d_left = wheel_radius*delta_L_encoder * (2*PI/TICKS_PER_REV);
+        double d_right = wheel_radius*delta_R_encoder * (2*PI/TICKS_PER_REV);
 
 
         double d_avg = (d_left + d_right)/2;
@@ -85,11 +87,9 @@ private:
 
         
         ori_z += delta_theta;
-
-        double L_radps = L_rpm * (2 * PI / 60.0);
-        double R_radps = R_rpm * (2 * PI / 60.0);
-        linear_velocity = -1*(wheel_radius/2 * (L_radps + R_radps));
-        angular_velocity = -1*(wheel_radius/wheel_base * (R_radps - L_radps));
+        
+        linear_velocity = d_avg /dt;
+        angular_velocity = delta_theta / dt;
 
         double delta_x = d_avg * cos(ori_z);
         double delta_y = d_avg * sin(ori_z);

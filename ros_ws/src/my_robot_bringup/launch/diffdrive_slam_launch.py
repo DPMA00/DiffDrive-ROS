@@ -70,9 +70,9 @@ def generate_launch_description():
             )
     
 
-    arduino_bridge_node = Node(package='my_cpp_pkg',
-                               executable='arduino_bridge_node',
-                               name='arduino_bridge_node')
+    mcu_bridge_node = Node(package='my_cpp_pkg',
+                               executable='mcu_bridge_node',
+                               name='mcu_bridge_node')
     
     
     odometry_node = Node(package='my_cpp_pkg',
@@ -108,7 +108,7 @@ def generate_launch_description():
         lidar_driver_node,
         rsp_node,               
         lidar_tf2_node,        
-        arduino_bridge_node,
+        mcu_bridge_node,
         odometry_node,
         jsp_node,
         rviz_node,

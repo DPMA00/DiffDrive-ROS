@@ -16,8 +16,9 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CmdDriveVel.msg"
-  "msg/MotorInfo.msg"
+  "msg/RobotInfo.msg"
   "msg/MotorOdomInfo.msg"
+  "msg/ImuInfo.msg"
   "action/MoveTo.action"
 )
 

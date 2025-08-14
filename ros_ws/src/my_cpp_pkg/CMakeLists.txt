@@ -14,11 +14,21 @@ find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(example_interfaces REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+
+find_package(PCL REQUIRED)
+find_package(pcl_conversions REQUIRED)
+
+include_directories(${PCL_INCLUDE_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+link_directories(${PCL_LIBRARY_DIRS})
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/../serial/include
   ${mpc_solver_INCLUDE_DIRS}
 )
+
 
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../serial ${CMAKE_CURRENT_BINARY_DIR}/serial_build)
@@ -32,12 +42,13 @@ ament_target_dependencies(pid_diffdrive_control
 
 
 
-add_executable(arduino_bridge_node src/arduino_bridge_node.cpp)
-target_link_libraries(arduino_bridge_node serial)
-ament_target_dependencies(arduino_bridge_node
+add_executable(mcu_bridge_node src/mcu_bridge_node.cpp)
+target_link_libraries(mcu_bridge_node serial)
+ament_target_dependencies(mcu_bridge_node
   rclcpp
   my_robot_interfaces
   example_interfaces
+  sensor_msgs
 )
 
 
@@ -51,10 +62,24 @@ ament_target_dependencies(odometry_node
                           my_robot_interfaces
                           )
 
+#[[
+add_executable(lidar_processing_node src/lidar_processing_node.cpp)
+ament_target_dependencies(lidar_processing_node
+                          rclcpp
+                          sensor_msgs
+                          pcl_conversions
+                          tf2
+                          tf2_ros
+                          geometry_msgs)
+
+target_link_libraries(lidar_processing_node ${PCL_LIBRARIES})
+]]
+
 install(TARGETS 
-  arduino_bridge_node
+  mcu_bridge_node
   pid_diffdrive_control
   odometry_node
+  #lidar_processing_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

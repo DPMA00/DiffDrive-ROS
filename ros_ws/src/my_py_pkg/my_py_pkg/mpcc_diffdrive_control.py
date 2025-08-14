@@ -19,11 +19,11 @@ class MPCCDiffDriveController(Node):
     def __init__(self):
         super().__init__("mpcc_diffdrive_controller_node")
         self.horizon_publisher = self.create_publisher(Path, "diffdrive/prediction_horizon", 10)
-        self.odom_subscription = self.create_subscription(Odometry, "odom", self.OdomCallback, 10)
-        self.velocity_publisher = self.create_publisher(CmdDriveVel, "arduino/cmd_vel",10)
+        self.odom_subscription = self.create_subscription(Odometry, "robot/odom", self.OdomCallback, 10)
+        self.velocity_publisher = self.create_publisher(CmdDriveVel, "cmd_vel",10)
+        self.track_publisher = self.create_publisher(Path, "diffdrive/track", 10)
 
-
-        self.timer = self.create_timer(2/30, self.mpc_loop)
+        self.timer = self.create_timer(2/35, self.mpc_loop)
         self.next_theta = 0.0
         self.current_state = np.array([0.0, 0.0, 0.0,self.next_theta])
         self.wheel_radius = 0.05
@@ -43,8 +43,9 @@ class MPCCDiffDriveController(Node):
         self.control_history = []
         self.prediction_history = []
     
-        self.ocp_solver, self.track= self.setup(N=30, tf=2.0)
+        self.ocp_solver, self.track= self.setup(N=35, tf=2.0)
         self.tracklength = self.track.L
+        self.track_x, self.track_y = self.track.get_track_plot_params()
 
 
 
@@ -56,14 +57,16 @@ class MPCCDiffDriveController(Node):
         ocp.solver_options.tf = tf
         ocp.solver_options.N_horizon = N
 
-        q_c = 1e4
-        q_l = 2e4
-        q_theta = 5e3
-        q_psi = 1e3
+        q_c = 2e4
+        q_l = 2.5e3
+        q_var = 4e4
+        q_psi = 2e3
+        
 
         R_v = 1
         R_omega = 100
-        R_var = 1
+        R = np.diag([R_v, R_omega])
+
         
         x = ocp.model.x[0]
         y = ocp.model.x[1]
@@ -71,16 +74,17 @@ class MPCCDiffDriveController(Node):
         theta=ocp.model.x[3]
 
         u = ocp.model.u
+        u_var = u[2]
 
         track = Track(data='/home/dpma/projects/DiffDrive-ROS/ros_ws/src/my_py_pkg/my_py_pkg/track_points2.csv')
-        x_full, y_full,theta_full = track.create_grid(density=1000)
+        x_full, y_full, theta_full = track.create_grid(density=3000)
 
         x_lin = ca.interpolant('x', 'linear', [theta_full], x_full)
         y_lin = ca.interpolant('y', 'linear', [theta_full], y_full)
-
+        
         x_ref = x_lin(theta)                
-        y_ref = y_lin(theta)
-
+        y_ref = y_lin(theta)      
+        
         dx_dtheta = ca.gradient(x_ref, theta)   
         dy_dtheta = ca.gradient(y_ref, theta)
         phi = ca.atan2(dy_dtheta, dx_dtheta)
@@ -91,16 +95,32 @@ class MPCCDiffDriveController(Node):
         e_c = ca.sin(phi)*(x-x_ref) - ca.cos(phi)*(y-y_ref)
         e_l = -ca.cos(phi)*(x-x_ref) - ca.sin(phi)*(y-y_ref)
         
-        heading_error = psi-phi
-        heading_error = ca.atan2(ca.sin(heading_error), ca.cos(heading_error))
-        heading_cost = q_psi * (heading_error)**2
-        ocp.model.cost_expr_ext_cost = (q_c * e_c**2 + q_l * e_l**2 + u[0]**2*R_v + u[1]**2*R_omega + u[2]**2*R_var - q_theta * theta) + heading_cost
+        #heading_error = psi-phi
+        #heading_error = ca.atan2(ca.sin(heading_error), ca.cos(heading_error))
+        
+        velocity_error = u_var - 0.75
 
-        ocp.cost.cost_type = 'EXTERNAL'
+        ocp.cost.cost_type = 'NONLINEAR_LS'
+        ocp.model.cost_y_expr = ca.vertcat(e_c,
+                                           e_l,
+                                           #heading_error,
+                                           velocity_error,
+                                           u[:2])
+        ocp.cost.yref = np.array([0,0,0,0,0])
+        ocp.cost.W = ca.diagcat(q_c, q_l,q_var, R).full()
+        
+        ocp.cost.cost_type_e = 'NONLINEAR_LS'
+        ocp.model.cost_y_expr_e = ca.vertcat(e_c,
+                                             e_l,
+                                            )
+                                            # heading_error)
+        ocp.cost.yref_e = np.array([0,0])
+        ocp.cost.W_e = ca.diagcat(q_c, q_l).full()
+        
         v_max = 0.7
         omega_max = 4
 
-        ocp.constraints.lbu = np.array([-v_max/2, -omega_max, 0])
+        ocp.constraints.lbu = np.array([0, -omega_max, 0])
         ocp.constraints.ubu = np.array([v_max, omega_max, 1.0])
         ocp.constraints.idxbu = np.array([0, 1,2])
 
@@ -140,11 +160,14 @@ class MPCCDiffDriveController(Node):
             controls = np.array([0.0,0.0])
         
 
-        self.get_logger().info(f"MPC controls: v={controls[0]:.3f}, omega={controls[1]:.3f}, theta= {self.next_theta:.3f}")
+        #self.get_logger().info(f"MPC controls: v={controls[0]:.3f}, omega={controls[1]:.3f}, theta= {self.next_theta:.3f}")
+        self.theta_prev = self.current_state[3]
+
         self.state_history.append(self.current_state)
         self.control_history.append(controls)
         self.publishPredictionHorizon()
         self.publishVelocity(controls)
+        self.publishTrackPath()
 
 
    
@@ -170,9 +193,7 @@ class MPCCDiffDriveController(Node):
         (_,_,yaw) = tf_transformations.euler_from_quaternion(quaternion)
         
         self.current_state[2] = yaw
-        
-        self.current_state[3] = self.track.project(self.current_state[0], self.current_state[1])
-
+        self.current_state[3] = self.track.project(self.current_state[0], self.current_state[1], self.theta_prev)        
         self.get_logger().info(f"x: {self.current_state[0]:.3f}, y: {self.current_state[1]:.3f}, theta:  {np.rad2deg(self.current_state[2]):.3f}")
 
 
@@ -206,6 +227,33 @@ class MPCCDiffDriveController(Node):
 
         self.horizon_publisher.publish(prediction)
 
+    def publishTrackPath(self):
+        traj = Path()
+        
+        traj.header.stamp = self.get_clock().now().to_msg()
+        traj.header.frame_id = "odom" 
+
+        for (x, y) in zip(self.track_x, self.track_y):
+            pose_stamped = PoseStamped()
+            
+            pose_stamped.header.stamp = traj.header.stamp
+            pose_stamped.header.frame_id = traj.header.frame_id
+
+            pose_stamped.pose.position.x = x
+            pose_stamped.pose.position.y = y
+            pose_stamped.pose.position.z = 0.0
+
+            pose_stamped.pose.orientation.x = 0.0
+            pose_stamped.pose.orientation.y = 0.0
+            pose_stamped.pose.orientation.z = np.sin(0.0 / 2.0)
+            pose_stamped.pose.orientation.w = np.cos(0.0 / 2.0)
+
+            
+
+            traj.poses.append(pose_stamped)
+
+        self.track_publisher.publish(traj)
+        
 
     def create_logs(self):
         import pandas as pd
@@ -232,12 +280,12 @@ class MPCCDiffDriveController(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = MPCCDiffDriveController()
-    rclpy.get_default_context().on_shutdown(node.create_logs)
+    #rclpy.get_default_context().on_shutdown(node.create_logs)
 
     try:
         rclpy.spin(node)
     finally:
-        node.create_logs()
+        #node.create_logs()
         node.destroy_node()
         rclpy.shutdown()
 

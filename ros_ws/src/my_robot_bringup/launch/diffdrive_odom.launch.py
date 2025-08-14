@@ -43,9 +43,9 @@ def generate_launch_description():
             )
     
 
-    arduino_bridge_node = Node(package='my_cpp_pkg',
-                               executable='arduino_bridge_node',
-                               name='arduino_bridge_node')
+    mcu_bridge_node = Node(package='my_cpp_pkg',
+                               executable='mcu_bridge_node',
+                               name='mcu_bridge_node')
     
     
     odometry_node = Node(package='my_cpp_pkg',
@@ -57,7 +57,7 @@ def generate_launch_description():
     
     
     return LaunchDescription([
-        arduino_bridge_node,
+        mcu_bridge_node,
         rsp_node,                     
         odometry_node,
         jsp_node,

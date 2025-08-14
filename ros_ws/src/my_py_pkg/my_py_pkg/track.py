@@ -33,7 +33,7 @@ class Track:
 
 
 
-        self.x_vec, self.y_vec,self.theta_vec = self.create_grid(density=5000)
+        self.x_vec, self.y_vec, self.theta_vec = self.create_grid(density=20000)
         pts = np.column_stack((self.x_vec, self.y_vec))
         self.kd = KDTree(pts)
         self.ds = self.theta_vec[1]-self.theta_vec[0]
@@ -50,10 +50,10 @@ class Track:
         return x_p, y_p, theta_p
 
     
-    def project(self, x, y):
+    def project(self, x, y, prev_theta):
+        _, idxs = self.kd.query([x, y])
 
-        dist, idx = self.kd.query([x,y])
-        return self.theta_vec[idx]
+        return self.theta_vec[idxs]
 
 
 
