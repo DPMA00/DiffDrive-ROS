@@ -17,3 +17,9 @@ ros_ws/install/
 .idea/
 .DS_Store
 Thumbs.db
+
+
+# ext libraries
+src/YDLidar-SDK/
+src/ydlidar_ros2_driver/
+src/serial/
