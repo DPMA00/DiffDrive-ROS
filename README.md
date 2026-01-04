@@ -94,3 +94,5 @@ ros2 run my_py_pkg mpcc_diffdrive_control
 ### Bugs and Issues
 
 While the overall formulation of the MPCC is functional, some non-intuitive behaviors still persist in the predicted trajectories at certain points in the track. Moreover, the system currently relies on dead-reckoning from wheel odometry for state estimation. As no external correction or sensor fusion is applied, those pose estimates are subject to drift over time. An improvement would be the integration of an EKF-based state estimator, or a full SLAM implementation.
+
+![mpcc_rviz_gif](https://github.com/user-attachments/assets/9490d92f-dafd-49d7-b197-45785bd514b6)
