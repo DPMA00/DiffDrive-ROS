@@ -18,8 +18,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CmdDriveVel.msg"
   "msg/RobotInfo.msg"
   "msg/MotorOdomInfo.msg"
-  "msg/ImuInfo.msg"
-  "action/MoveTo.action"
 )
 
 ament_export_dependencies(rosidl_default_runtime)

@@ -62,24 +62,10 @@ ament_target_dependencies(odometry_node
                           my_robot_interfaces
                           )
 
-#[[
-add_executable(lidar_processing_node src/lidar_processing_node.cpp)
-ament_target_dependencies(lidar_processing_node
-                          rclcpp
-                          sensor_msgs
-                          pcl_conversions
-                          tf2
-                          tf2_ros
-                          geometry_msgs)
-
-target_link_libraries(lidar_processing_node ${PCL_LIBRARIES})
-]]
-
 install(TARGETS 
   mcu_bridge_node
   pid_diffdrive_control
   odometry_node
-  #lidar_processing_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

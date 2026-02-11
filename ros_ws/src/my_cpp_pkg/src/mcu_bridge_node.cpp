@@ -1,10 +1,9 @@
 #include <rclcpp/rclcpp.hpp>
 #include <serial/serial.h>
-#include <my_robot_interfaces/msg/cmd_drive_vel.hpp>
 #include <my_robot_interfaces/msg/robot_info.hpp>
-#include <my_robot_interfaces/msg/imu_info.hpp>
 #include <my_robot_interfaces/msg/motor_odom_info.hpp>
 #include <example_interfaces/srv/trigger.hpp>
+#include <geometry_msgs/msg/twist.hpp>
 #include <sensor_msgs/msg/imu.hpp>
 #include <sstream>
 #include <iomanip>
@@ -20,7 +19,7 @@ class MCUBridge : public rclcpp::Node{
         robot_info_publisher = this->create_publisher<my_robot_interfaces::msg::RobotInfo>("robot_info",10);
         motor_odom_info_publisher = this->create_publisher<my_robot_interfaces::msg::MotorOdomInfo>("motor_odom_info",10);
         imu_info_publisher = this->create_publisher<sensor_msgs::msg::Imu>("imu/data",10);
-        robot_target_vel_subscriber = this->create_subscription<my_robot_interfaces::msg::CmdDriveVel>("cmd_vel", 10, std::bind(&MCUBridge::velocity_callback, this, std::placeholders::_1));
+        robot_target_vel_subscriber = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", 10, std::bind(&MCUBridge::velocity_callback, this, std::placeholders::_1));
         encoder_reset_server = this->create_service<example_interfaces::srv::Trigger>("encoder_reset_server", 
                                 std::bind(&MCUBridge::callbackResetEncoder, this, _1, _2));
         encoder_reset_client = this->create_client<example_interfaces::srv::Trigger>("encoder_reset_server");
@@ -156,10 +155,10 @@ class MCUBridge : public rclcpp::Node{
         }
 
 
-        void velocity_callback(const my_robot_interfaces::msg::CmdDriveVel::SharedPtr data)
+        void velocity_callback(const geometry_msgs::msg::Twist::SharedPtr data)
         {
-            float cmd_vx = data->vx;
-            float cmd_omega = data->omega;
+            float cmd_vx = data->linear.x;
+            float cmd_omega = data->angular.z;
 
             try
             {
@@ -182,7 +181,7 @@ class MCUBridge : public rclcpp::Node{
     rclcpp::Publisher<my_robot_interfaces::msg::RobotInfo>::SharedPtr robot_info_publisher;
     rclcpp::Publisher<my_robot_interfaces::msg::MotorOdomInfo>::SharedPtr motor_odom_info_publisher;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_info_publisher;
-    rclcpp::Subscription<my_robot_interfaces::msg::CmdDriveVel>::SharedPtr robot_target_vel_subscriber;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr robot_target_vel_subscriber;
     rclcpp::Service<example_interfaces::srv::Trigger>::SharedPtr encoder_reset_server;
     rclcpp::Client<example_interfaces::srv::Trigger>::SharedPtr encoder_reset_client;
     rclcpp::TimerBase::SharedPtr timer_;

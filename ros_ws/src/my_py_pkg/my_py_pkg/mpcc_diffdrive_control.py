@@ -4,8 +4,7 @@ from geometry_msgs.msg import Vector3
 from acados_template import AcadosOcp, AcadosOcpSolver
 from my_py_pkg.diffdrive_aug_model import export_diffdrive_model
 from nav_msgs.msg import Odometry
-from my_robot_interfaces.msg import MotorOdomInfo
-from my_robot_interfaces.msg import CmdDriveVel
+from geometry_msgs.msg import Twist
 from tf2_ros import TransformBroadcaster
 from geometry_msgs.msg import TransformStamped
 from nav_msgs.msg import Path
@@ -19,15 +18,15 @@ class MPCCDiffDriveController(Node):
     def __init__(self):
         super().__init__("mpcc_diffdrive_controller_node")
         self.horizon_publisher = self.create_publisher(Path, "diffdrive/prediction_horizon", 10)
-        self.odom_subscription = self.create_subscription(Odometry, "robot/odom", self.OdomCallback, 10)
-        self.velocity_publisher = self.create_publisher(CmdDriveVel, "cmd_vel",10)
+        self.odom_subscription = self.create_subscription(Odometry, "/odometry/filtered", self.OdomCallback, 10)
+        self.velocity_publisher = self.create_publisher(Twist, "cmd_vel",10)
         self.track_publisher = self.create_publisher(Path, "diffdrive/track", 10)
 
         self.timer = self.create_timer(2/35, self.mpc_loop)
         self.next_theta = 0.0
         self.current_state = np.array([0.0, 0.0, 0.0,self.next_theta])
         self.wheel_radius = 0.05
-        self.wheel_base = 0.29
+        self.wheel_base = 0.258
 
         self.prev_L_enc = 0
         self.prev_R_enc = 0
@@ -159,8 +158,6 @@ class MPCCDiffDriveController(Node):
             self.get_logger().warn(f'Theta: {self.next_theta:.3f}, Tracklength: {self.tracklength:.3f}')
             controls = np.array([0.0,0.0])
         
-
-        #self.get_logger().info(f"MPC controls: v={controls[0]:.3f}, omega={controls[1]:.3f}, theta= {self.next_theta:.3f}")
         self.theta_prev = self.current_state[3]
 
         self.state_history.append(self.current_state)
@@ -172,10 +169,10 @@ class MPCCDiffDriveController(Node):
 
    
     def publishVelocity(self, controls):
-        msg = CmdDriveVel()
+        msg = Twist()
 
-        msg.vx = controls[0]
-        msg.omega = controls[1]
+        msg.linear.x = controls[0]
+        msg.angular.z = controls[1]
 
         self.velocity_publisher.publish(msg)
 
@@ -188,7 +185,7 @@ class MPCCDiffDriveController(Node):
         quaternion = (orientation_q.x,
                       orientation_q.y,
                       orientation_q.z,
-                      orientation_q._w)
+                      orientation_q.w)
 
         (_,_,yaw) = tf_transformations.euler_from_quaternion(quaternion)
         

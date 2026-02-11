@@ -22,7 +22,7 @@ public: OdometryNode() : Node("odometry_node")
         odom_info_subscriber= this->create_subscription<my_robot_interfaces::msg::MotorOdomInfo>(
             "motor_odom_info", 10, std::bind(&OdometryNode::MotorOdomInfoCallback, this, std::placeholders::_1));
 
-        odometry_publisher = this->create_publisher<nav_msgs::msg::Odometry>("robot/odom", 10);
+        odometry_publisher = this->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
 
         tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
@@ -36,7 +36,7 @@ private:
     double ori_z {0};
     
     double wheel_radius {0.05};
-    double wheel_base {0.29};
+    double wheel_base {0.258};
 
 
     long prev_L_enc_pos {0};
