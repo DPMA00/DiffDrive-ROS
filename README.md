@@ -12,7 +12,7 @@ The repository is organized as a ROS2 workspace (`ros_ws`) containing several pa
 
 - [MCU Bridge Node](https://github.com/DPMA00/DiffDrive-ROS/blob/master/ros_ws/src/my_cpp_pkg/src/mcu_bridge_node.cppy): A C++ ROS2 node that connects the Raspberry Pi to the microcontroller via a UART/USB serial link. It opens the serial port at the configured baud rate and handles three (currently used) ROS topics to interface with the hardware.
 
-- [MPCC Controller Node](https://github.com/DPMA00/DiffDrive-ROS/blob/master/ros_ws/src/my_py_pkg/my_py_pkg/mpcc_diffdrive_control.py) (**Minor issues still persist**): This node implements a model predictive contouring controller for trajectory following. State feedback is obtained by subscribing to the `robot/odom` topic, which provides encoder-based dead-reckoning odometry. The controller assumes a **fixed reference track**, therefore it cannot be updated at runtime.
+- [MPCC Controller Node](https://github.com/DPMA00/DiffDrive-ROS/blob/master/ros_ws/src/my_py_pkg/my_py_pkg/mpcc_diffdrive_control.py): This node implements a model predictive contouring controller for trajectory following. State feedback is obtained by subscribing to the `/odometry/filtered` topic, which provides state estimates from an EKF-based fusion of wheel encoder odometry and an IMU. For now the controller assumes a **fixed reference track**, therefore it cannot be updated at runtime.
   
 - [MPC Point Control Node](https://github.com/DPMA00/DiffDrive-ROS/blob/master/ros_ws/src/my_py_pkg/my_py_pkg/mpc_diffdrive_control.py) (**Old test node**): A Python ROS2 node that computes robot pose using dead-reckoning odometry. The pose is updated at a fixed time step and used directly as the system state for an MPC point control loop running at 12Hz, with support for cicrcular obstacle avoidance.    
 
@@ -91,8 +91,6 @@ ros2 launch my_robot_bringup diffdrive_odom_launch.py
 ros2 run my_py_pkg mpcc_diffdrive_control
 ```
 
-### Bugs and Issues
+### Future Improvements
 
-While the overall formulation of the MPCC is functional, some non-intuitive behaviors still persist in the predicted trajectories at certain points in the track. Moreover, the system currently relies on dead-reckoning from wheel odometry for state estimation. As no external correction or sensor fusion is applied, those pose estimates are subject to drift over time. An improvement would be the integration of an EKF-based state estimator, or a full SLAM implementation.
-
-![mpcc_rviz_gif](https://github.com/user-attachments/assets/9490d92f-dafd-49d7-b197-45785bd514b6)
+Adding dynamic reference track functionality in the MPCC and incorporating this with a high level planner from the Nav2 stack.
